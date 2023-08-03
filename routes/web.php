@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
+use App\Http\Controllers\Frontend\IndexController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,10 +21,6 @@ Route::middleware('admin:admin')->group(function (){
     Route::post('admin/login',[AdminController::class,'store'])->name('admin.login');
 });
 
-
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::middleware(['auth:sanctum,admin',config('jetstream.auth_session'),'verified'])->group(function () {
 
@@ -44,7 +41,7 @@ Route::post('/update/change/password',[AdminProfileController::class,'AdminUpdat
 
 
 
-
+//User All Routes
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
@@ -53,3 +50,4 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     })->name('dashboard');
 
 });
+Route::get('/',[IndexController::class,'Index']);
