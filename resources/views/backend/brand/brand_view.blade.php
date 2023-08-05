@@ -32,8 +32,10 @@
 								<td>{{ $item->brand_name_en }}</td>
 								<td>{{ $item->brand_name_hin }}</td>
 								<td><img src="{{ asset($item->brand_image)  }}" style="width:70px;" height="40px" alt="" srcset=""></td>
-								<td><a href="" class="btn btn-info">Edit</a></td>								
-								<td><a href="" class="btn btn-danger">Delete</a></td>								
+								<td>
+                  <a href="{{ route('brand.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
+								  <a href="{{ route('brand.delete',$item->id) }}" title="Delete Data" id="delete" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>								
 							</tr>
 						    @endforeach
 					  </table>
@@ -61,9 +63,7 @@
 
        <form method="post" action="{{ route('brand.store') }}" enctype="multipart/form-data">
             @csrf
-             <div class="row">
-               <div class="col-12">
-                
+           
 
            
                       <div class="form-group">
@@ -108,7 +108,7 @@
 
 
                         <div class="text-xs-right">
-						      <input type="submit" class="btn btn-rounded btn-info mb-5" value="Update">
+						      <input type="submit" class="btn btn-rounded btn-info mb-5" value="Submit">
 						        </div>
 						        </div>
             
