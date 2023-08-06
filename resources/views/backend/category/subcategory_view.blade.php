@@ -33,7 +33,7 @@
 								<td>{{ $item->subcategory_name_en }}</td>
 								<td>{{ $item->subcategory_name_hin }}</td>
 								
-								<td>
+								<td width="30%">
                                     <a href="{{ route('subcategory.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
 								    <a href="{{ route('subcategory.delete',$item->id) }}" title="Delete Data" id="delete" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                 </td>								
@@ -69,7 +69,7 @@
 								<h5>Category Select <span class="text-danger">*</span></h5>
 								<div class="controls">
 									<select name="category_id" required="" class="form-control" aria-invalid="false">
-										<option value="" disabled="">Select Category</option>
+										<option value="" selected="" disabled="">Select Category</option>
                                         @foreach($category as $cate)
 										<option value="{{ $cate->id }}">{{ $cate->category_name_en }}</option>
 										@endforeach
