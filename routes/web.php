@@ -101,7 +101,10 @@ Route::get('sub/delete/{id}',[SubCategoryController::class,'SubCategoryDelete'])
 
 //Admin Sub Category All Routes
 Route::get('sub/sub/view',[SubCategoryController::class,'SubSubCategoryView'])->name('view.sub.subcategory');
+
 Route::get('subcategory/ajax/{category_id}',[SubCategoryController::class,'GetSubCategory']);
+Route::get('sub-subcategory/ajax/{subcategory_id}',[SubCategoryController::class,'GetSubSubCategory']);
+
 Route::post('sub/sub/store',[SubCategoryController::class,'SubSubCategoryStore'])->name('subsubcategory.store');
 Route::get('sub/sub/edit/{id}',[SubCategoryController::class,'SubSubCategoryEdit'])->name('subsubcategory.edit');
 Route::post('sub/sub/update',[SubCategoryController::class,'SubSubCategoryUpdate'])->name('subsubcategory.update');
