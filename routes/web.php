@@ -9,6 +9,7 @@ use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\SubCategoryController;
+use App\Http\Controllers\Backend\ProductController;
 
 
 use App\Http\Controllers\Frontend\IndexController;
@@ -105,5 +106,16 @@ Route::post('sub/sub/store',[SubCategoryController::class,'SubSubCategoryStore']
 Route::get('sub/sub/edit/{id}',[SubCategoryController::class,'SubSubCategoryEdit'])->name('subsubcategory.edit');
 Route::post('sub/sub/update',[SubCategoryController::class,'SubSubCategoryUpdate'])->name('subsubcategory.update');
 Route::get('sub/sub/delete/{id}',[SubCategoryController::class,'SubSubCategoryDelete'])->name('subsubcategory.delete');
+
+});
+
+
+
+//Admin Products All Routes
+
+Route::prefix('products')->group(function(){
+
+    Route::get('/add',[ProductController::class,'AddProduct'])->name('add-product');
+   
 
 });

@@ -17,7 +17,17 @@
 	<link rel="stylesheet" href=" {{ asset('backend/css/style.css') }}">
 	<link rel="stylesheet" href=" {{ asset('backend/css/skin_color.css') }}">
 
-  <link href=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css " rel="stylesheet">
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	
+	<link href=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.css " rel="stylesheet">
+	
+	<script src="{{ asset('../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js') }}"></script>
+
+  <!-- For CK Editer -->
+  	<script src="{{ asset('../assets/vendor_components/ckeditor/ckeditor.js') }}"></script>
+	<script src="{{ asset('../assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js') }}"></script>
+	<script src="{{ asset('backend/js/pages/editor.js') }}"></script>
      
   </head>
 
@@ -47,8 +57,7 @@
 	 
 	<!-- Vendor JS -->
 	<script src="{{ asset('backend/js/vendors.min.js') }}"></script>
-    <script src="{{ asset('../assets/icons/feather-icons/feather.min.js') }}"></script>	
-	<script src="{{ asset('../assets/vendor_components/easypiechart/dist/jquery.easypiechart.js') }}"></script>
+    <script src="{{ asset('../assets/icons/feather-icons/feather.min.js') }}"></script>		
 	<script src="{{ asset('../assets/vendor_components/apexcharts-bundle/irregular-data-series.js') }}"></script>
 	<script src="{{ asset('../assets/vendor_components/apexcharts-bundle/dist/apexcharts.js') }}"></script>
 
@@ -63,6 +72,9 @@
 	<!-- Sweet Alert2 -->
 	
 	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+	<!-- Tags Input Script  -->
+	<script src="{{ asset('../assets/vendor_components/bootstrap-tagsinput/dist/bootstrap-tagsinput.js') }}"></script>
 
 	<script type="text/javascript">
 
