@@ -139,7 +139,7 @@
                        <div class="form-group">
 								<h5>Product Code <span class="text-danger">*</span></h5>
 								<div class="controls">
-									<input type="text" name="product_code" class="form-control" > </div>
+									<input type="text" name="product_code" required="" class="form-control" > </div>
                                     @error('product_name_code')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -151,7 +151,7 @@
                        <div class="form-group">
 								<h5>Product Quantity <span class="text-danger">*</span></h5>
 								<div class="controls">
-									<input type="text" name="product_qty" class="form-control" > </div>
+									<input type="text" name="product_qty" required="" class="form-control" > </div>
                                     @error('product_qty')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -164,7 +164,7 @@
                        <div class="form-group">
 								<h5>Product Tag En <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_tags_en" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" />  </div>
+                                <input type="text" name="product_tags_en" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
                                     @error('product_name_hin')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -182,7 +182,7 @@
                        <div class="form-group">
 								<h5>Product Tag Hindi <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_tags_hin" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" />  </div>
+                                <input type="text" name="product_tags_hin" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
                                     @error('product_tags_hin')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -194,7 +194,7 @@
                        <div class="form-group">
 								<h5>Product Size En <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_size_en" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" />  </div>
+                                <input type="text" name="product_size_en" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
                                     @error('product_size_en')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -207,7 +207,7 @@
                        <div class="form-group">
 								<h5>Product Size Hindi <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_size_hin" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" />  </div>
+                                <input type="text" name="product_size_hin" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
                                     @error('product_size_hin')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -225,7 +225,7 @@
                        <div class="form-group">
 								<h5>Product Color En <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_color_en" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" />  </div>
+                                <input type="text" name="product_color_en" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
                                     @error('product_color_en')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -237,7 +237,7 @@
                        <div class="form-group">
 								<h5>Product Color Hindi <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_color_hin" value="Lorem,Ipsum,Amet" data-role="tagsinput" placeholder="add tags" />  </div>
+                                <input type="text" name="product_color_hin" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
                                     @error('product_color_hin')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -250,7 +250,7 @@
                        <div class="form-group">
 								<h5>Product Selling Price <span class="text-danger">*</span></h5>
 								<div class="controls">
-									<input type="text" name="selling_price" class="form-control" > </div>
+									<input type="text" name="selling_price" class="form-control" required=""> </div>
                                     @error('selling_price')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -267,7 +267,7 @@
                        <div class="form-group">
 								<h5>Product Discount Price <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="discount_price" class="form-control"/>  </div>
+                                <input type="text" name="discount_price" class="form-control" required=""/>  </div>
                                     @error('discount_price')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -280,7 +280,7 @@
                        <div class="form-group">
 								<h5>Main Thambnail <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                    <input type="file" name="product_thumbnail" class="form-control" onchange="mainThamUrl(this)"/> 
+                                    <input type="file" name="product_thumbnail" required="" class="form-control" onchange="mainThamUrl(this)"/> 
                                     @error('product_thumbnail')
                                     <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -295,7 +295,7 @@
                        <div class="form-group">
 								<h5>Multiple Image <span class="text-danger">*</span></h5>
 								<div class="controls">
-                                    <input type="file" name="multi_img[]" class="form-control" multiple="" id="multiImg"/>  
+                                    <input type="file" name="multi_img[]" required="" class="form-control" multiple="" id="multiImg"/>  
                                     @error('multi_img')
                                     <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
@@ -343,7 +343,7 @@
                        <div class="form-group">
 								<h5>Long Description English <span class="text-danger">*</span></h5>
 								<div class="controls">
-									<textarea id="editor1"  rows="10" cols="80" name="long_descp_en" >
+									<textarea id="editor1" required=""  rows="10" cols="80" name="long_descp_en" >
                                         This is textarea
                                     </textarea>
 								</div>
@@ -357,7 +357,7 @@
                        <div class="form-group">
 								<h5>Long Description Hindi <span class="text-danger">*</span></h5>
 								<div class="controls">
-									<textarea id="editor2" rows="10" cols="80" name="long_descp_hin" ></textarea>
+									<textarea id="editor2" required="" rows="10" cols="80" name="long_descp_hin" ></textarea>
 								</div>                                  
 							</div><!--End-Form-Group-->
                               
@@ -376,7 +376,7 @@
 									<h5>Checkbox Group <span class="text-danger">*</span></h5>
 									<div class="controls">
 										<fieldset>
-											<input type="checkbox" id="checkbox_2" name="hot_deal"  value="1">
+											<input type="checkbox" id="checkbox_2" name="hot_deals"  value="1">
 											<label for="checkbox_2">Hot Deals</label>
 										</fieldset>
 										<fieldset>

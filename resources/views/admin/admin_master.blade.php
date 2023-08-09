@@ -28,7 +28,7 @@
   	<script src="{{ asset('../assets/vendor_components/ckeditor/ckeditor.js') }}"></script>
 	<script src="{{ asset('../assets/vendor_plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.js') }}"></script>
 	<script src="{{ asset('backend/js/pages/editor.js') }}"></script>
-     
+
   </head>
 
 <body class="hold-transition dark-skin sidebar-mini theme-primary fixed">
@@ -82,7 +82,6 @@
 			$(document).on('click','#delete', function(e){
 				e.preventDefault();
 				var link = $(this).attr("href");
-
 
 					Swal.fire({
 					title: 'Are you sure?',
