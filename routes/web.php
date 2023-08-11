@@ -14,6 +14,7 @@ use App\Http\Controllers\Backend\SliderController;
 
 
 use App\Http\Controllers\Frontend\IndexController;
+use App\Http\Controllers\Frontend\LanguageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -154,3 +155,14 @@ Route::post('user/profile/store',[IndexController::class,'UserProfileStore'])->n
 Route::get('user/change/password',[IndexController::class,'UserChangePassword'])->name('change.password');
 Route::post('user/update/password',[IndexController::class,'UserPasswordUpdate'])->name('user.password.update');
 
+
+
+
+
+
+//// Frontend All Routes /////
+/// Multi Language All Routes ////
+
+Route::get('/language/hindi', [LanguageController::class, 'Hindi'])->name('hindi.language');
+
+Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
