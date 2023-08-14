@@ -277,7 +277,7 @@
                        <div class="form-group">
 								<h5>Product Discount Price <span class="text-danger">*</span></h5> 
 								<div class="controls">
-                                <input type="text" name="discount_price" value="{{ $products->discount_price  }}" class="form-control" required=""/>  </div>
+                                <input type="text" name="discount_price" value="{{ $products->discount_price  }}" class="form-control" />  </div>
                                     @error('discount_price')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror

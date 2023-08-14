@@ -164,7 +164,10 @@
 
 
                 @foreach($categories as $category)
-                  <li class="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">{{ $category->category_name_en }}</a>
+                  <li class="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
+                  @if(session()->get('language') == 'hindi') {{ $category->category_name_hin }}
+                  @else{{ $category->category_name_en }} @endif
+                  </a>
                     <ul class="dropdown-menu container">
                       <li>
                         <div class="yamm-content ">
@@ -179,7 +182,11 @@
                             <div class="col-xs-12 col-sm-6 col-md-2 col-menu">
 
 
-                              <h2 class="title">{{ $subcategory->subcategory_name_en }}</h2>
+                              <h2 class="title">
+                              @if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }}  
+                              @else{{ $subcategory->subcategory_name_en }}
+                              @endif 
+                            </h2>
                               <!--   // Get SubSubCategory Table Data -->
                   @php
                   $subsubcategories = App\Models\SubSubCategory::where('subcategory_id',$subcategory->id)->orderBy('subsubcategory_name_en','ASC')->get();
@@ -187,14 +194,17 @@
 
                   @foreach($subsubcategories as $subsubcategory)
                               <ul class="links">
-                                <li><a href="#">{{ $subsubcategory->subsubcategory_name_en }}</a></li>
+                                <li><a href="#">
+                                @if(session()->get('language') == 'hindi') {{ $subsubcategory->subsubcategory_name_hin }}  
+                              @else{{ $subsubcategory->subsubcategory_name_en }}@endif 
+                               </a></li>
 
                               </ul>
-                    @endforeach <!-- // End SubSubCategory Foreach -->
+                    @endforeach <!--  End SubSubCategory Foreach -->
 
                             </div>
                             <!-- /.col -->
-                            @endforeach <!-- // End SubCategory Foreach -->
+                            @endforeach <!-- End SubCategory Foreach -->
                             <div class="col-xs-12 col-sm-6 col-md-4 col-menu banner-image"> <img class="img-responsive" src="{{ asset('frontend/assets/images/banners/top-menu-banner.jpg') }}" alt=""> </div>
                             <!-- /.yamm-content --> 
                           </div>
@@ -202,7 +212,7 @@
                       </li>
                     </ul>
                   </li>
-                  @endforeach <!-- // End Category Foreach -->
+                  @endforeach <!--  End Category Foreach -->
                                         
                 <li class="dropdown  navbar-right special-menu"> <a href="#">Todays offer</a> </li>
               </ul>
