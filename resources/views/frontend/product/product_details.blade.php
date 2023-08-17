@@ -104,7 +104,7 @@
 						</div><!-- /.cart -->
 					</div>	
 					</div>		        
-													<div class="item">
+				<div class="item">
 					<div class="products">
 						<div class="hot-deal-wrapper">
 							<div class="image">
@@ -375,8 +375,7 @@
 							</div><!-- /.description-container -->
 
 							<div class="price-container info-container m-t-20">
-								<div class="row">
-									
+								<div class="row">									
 
                         <div class="col-sm-6">
                             <div class="price-box">
@@ -405,6 +404,45 @@
 
 								</div><!-- /.row -->
 							</div><!-- /.price-container -->
+
+
+
+							<!-- ////////////////////////////ADD PRODUCT COLOR AND PRODUCT SIZE//////////////////// -->
+
+							<div class="row">									
+
+								<div class="col-sm-6">
+
+								<div class="form-group">
+									<label class="info-title control-label">Choose Color <span></span></label>
+									<select class="form-control unicase-form-control selectpicker" style="display: none;">
+										<option selected="" disabled="">--Select Color--</option>
+										@foreach($product_color_en as $color)
+										<option value="{{ $color }}">{{ $color }}</option>
+										@endforeach
+									</select>
+								</div><!-- /.form-group -->
+							
+								</div><!-- /.col-sm-6 -->
+
+								<div class="col-sm-6">
+
+								<div class="form-group">
+									<label class="info-title control-label">Choose Size <span>	</span></label>
+									<select class="form-control unicase-form-control selectpicker" style="display: none;">
+										<option selected="" disabled="">--Select Size--</option>
+										@foreach($product_size_en as $size)
+										<option value="{{ $size }}">{{ $size }}</option>
+										@endforeach
+									</select>
+								</div><!-- /.form-group -->
+									
+								</div><!-- /.col-sm-6 -->
+
+
+								</div><!-- /.row -->
+							
+							<!-- ////////////////////////////END ADD PRODUCT COLOR AND PRODUCT SIZE//////////////////// -->
 
 							<div class="quantity-container info-container">
 								<div class="row">
