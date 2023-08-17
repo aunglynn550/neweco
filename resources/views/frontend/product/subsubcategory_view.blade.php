@@ -4,7 +4,7 @@
 @section('content')
 
 @section('title')
-Tag Wise Product
+Sub SubCategory Product
 @endsection
 
 
@@ -59,7 +59,7 @@ Tag Wise Product
                         @foreach($subcategories as $subcategory)
                         <ul>
 
-                          <li><a href="#">
+                          <li><a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en) }}">
                           @if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} 
                               @else{{ $subcategory->subcategory_name_en }}                                                            
                               @endif
@@ -280,7 +280,7 @@ Tag Wise Product
                         <!-- /.product-image -->
                         
                         <div class="product-info text-left">
-                          <h3 class="name"><a href="detail.html">
+                          <h3 class="name"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en) }}">
                           @if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} 
                               @else{{ $product->product_name_en }}
                               @endif 
@@ -344,14 +344,14 @@ Tag Wise Product
                       <div class="row product-list-row">
                         <div class="col col-sm-4 col-lg-4">
                           <div class="product-image">
-                            <div class="image"> <img src="{{ asset($product->product_thambnail) }}" alt=""> </div>
+                            <div class="image"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en) }}"> <img src="{{ asset($product->product_thambnail) }}" alt=""> </div>
                           </div>
                           <!-- /.product-image --> 
                         </div>
                         <!-- /.col -->
                         <div class="col col-sm-8 col-lg-8">
                           <div class="product-info">
-                            <h3 class="name"><a href="detail.html">
+                            <h3 class="name"> <a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en) }}">
                             @if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} 
                               @else{{ $product->product_name_en }}
                               @endif 

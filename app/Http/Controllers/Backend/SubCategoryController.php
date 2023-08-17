@@ -32,8 +32,8 @@ class SubCategoryController extends Controller
             'category_id' => $request->category_id,
             'subcategory_name_en' => $request->subcategory_name_en,
             'subcategory_name_hin' => $request->subcategory_name_hin,
-            'subcategory_slug_en' =>strtolower(str_replace(' ', '-',$request->category_name_en)),
-            'subcategory_slug_hin' => str_replace(' ', '-',$request->category_name_hin),
+            'subcategory_slug_en' =>strtolower(str_replace(' ', '-',$request->subcategory_name_en)),
+            'subcategory_slug_hin' => str_replace(' ', '-',$request->subcategory_name_hin),
         ]);
 
         $notification = array(
