@@ -180,3 +180,7 @@ Route::get('subcategory/product/{subcat_id}/{slug}', [IndexController::class, 'S
 
 //Frontend SubSubcategory Wise Data
 Route::get('subsubcategory/product/{subsubcat_id}/{slug}', [IndexController::class, 'SubSubCatWiseProduct']);
+
+
+//Product VIew Model with Ajax
+Route::get('product/view/model/{id}', [IndexController::class, 'ProductViewAjax']);
