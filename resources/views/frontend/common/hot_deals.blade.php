@@ -11,7 +11,7 @@ $hot_deals = App\Models\Product::where('hot_deals',1)->where('discount_price','!
             <div class="item">
               <div class="products">
                 <div class="hot-deal-wrapper">
-                  <div class="image"> <img src="{{ asset($product->product_thambnail) }}" alt=""> </div>
+                  <div class="image"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en) }}"></a> <img src="{{ asset($product->product_thambnail) }}" alt=""> </div>
                           @php
                           $amount = $product->selling_price - $product->discount_price;
                           $discount = ($amount/ $product->selling_price)* 100;
@@ -45,7 +45,7 @@ $hot_deals = App\Models\Product::where('hot_deals',1)->where('discount_price','!
                 <!-- /.hot-deal-wrapper -->
                 
                 <div class="product-info text-left m-t-20">
-                  <h3 class="name"><a href="detail.html">
+                  <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en) }}">
                               @if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} 
                               @else{{ $product->product_name_en }}                                                            
                               @endif </a></h3>

@@ -189,3 +189,11 @@ Route::get('product/view/model/{id}', [IndexController::class, 'ProductViewAjax'
 
 //Add to Cart Store Data
 Route::post('cart/data/store/{id}', [CartController::class, 'AddToCart']);
+
+
+//Mini Cart Get Data
+Route::get('product/mini/cart/', [CartController::class, 'AddMiniCart']);
+
+
+// Remove Mini Cart Data
+Route::get('minicart/product-remove/{rowId}', [CartController::class, 'RemoveMiniCart']);
