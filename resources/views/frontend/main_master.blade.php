@@ -62,6 +62,7 @@
 <script src="{{ asset('frontend/assets/js/wow.min.js') }}"></script> 
 <script src="{{ asset('frontend/assets/js/scripts.js') }}"></script>
 
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
 <script src=" https://cdn.jsdelivr.net/npm/toastr@2.1.4/build/toastr.min.js "></script>
 	<script>
@@ -94,7 +95,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLabel"><span id="pname"></span></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="closeModel">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -132,21 +133,22 @@
 			<div class="col-md-4">
 			<div class="form-group">
 				<label for="exampleFormControlSelect1">Choose Color</label>
-				<select class="form-control" id="exampleFormControlSelect1" name="color">			
+				<select class="form-control" id="color" name="color">			
 				
 				</select>
 			</div><!-- ./form-group -->
 
 			<div class="form-group" id="sizeArea">
 				<label for="exampleFormControlSelect1">Choose Size</label>
-				<select class="form-control" id="exampleFormControlSelect1" name="size">								
+				<select class="form-control" id="size" name="size">								
 				</select>
 			</div><!-- ./form-group -->
 			<div class="form-group">
 				<label for="exampleFormControlInput1">Quntity</label>
-				<input type="number" class="form-control" id="exampleFormControlInput1" value="1" min="1">
+				<input type="number" class="form-control" id="qty" value="1" min="1">
 			</div><!-- ./form-group -->
-			<button type="submit" class="btn btn-primary mb-2">Add to Cart</button>
+			<input type="hidden" name="" id="product_id">
+			<button type="submit" class="btn btn-primary mb-2" onclick="addToCart()">Add to Cart</button>
 			</div><!-- ./col-md-4 -->
 
 		</div><!-- ./row -->
@@ -179,6 +181,7 @@
 					$('#pcategory').text(data.product.category.category_name_en)
 					$('#pbrand').text(data.product.brand.brand_name_en)
 					$('#pimage').attr('src','/'+data.product.product_thambnail)
+					$('#product_id').val(id)
 
 					//Product Price
 					if(data.product.discount_price == null){
@@ -222,7 +225,52 @@
 				}
 			})
 		}
+		//End Product View With Modal
+
+			function addToCart(){
+				var product_name = $('#pname').text();
+				var id =$('#product_id').val();
+				var color = $('#color option:selected').text();
+				var size = $('#size option:selected').text();
+				var quantity = $('#qty').val()
+				$.ajax({
+					type: "POST",
+					dataType:'json',
+					data:{
+						color:color,size:size, quantity:quantity, product_name:product_name
+					},
+					url : "/cart/data/store/"+id,
+					success:function(data){
+						$('#closeModel').click()
+						// console.log(data)
+
+						//start message
+							const Toast = Swal.mixin({
+								toast :true,
+								position : 'top-end',
+								icon : 'success',
+								showConfirmButton : false,
+								timer:5000
+							})
+							if($.isEmptyObject(data.error)){
+								Toast.fire({
+									type :'success',
+									title: data.success
+								})
+
+							}else{
+								Toast.fire({
+									type :'success',
+									title: data.success
+							})
+						}
+						//end message
+					}
+				})
+			}
+		//Start Add to Cart
 
 	</script>
+	
 </body>
 </html>
