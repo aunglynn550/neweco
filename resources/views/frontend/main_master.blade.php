@@ -347,10 +347,113 @@
 
 	}
 
-	////// MiniCart Remove End////////////
+	////// MiniCart Remove End////////////	
 
 
 	</script>
+
+	<!-- /////// Add WishList //////////// -->
+	<script type="text/javascript">
+		function addToWishList(product_id){
+			$.ajax({
+				type : "POST",
+				dataType:'json',
+				url:'/user/add-to-wishlist/'+product_id,
+				success:function(data){
+
+				}
+			})
+		}
+
+	</script>
+
+	<!-- /////// End Add WishList //////// -->
+
+	<!-- ///////// Load Wish List Data//////////////-->
+	<script type="text/javascript">
+	function wishlist(){
+			$.ajax({
+				type : 'GET',
+				url :'/user/get-wishlist-product',
+				dataType : 'json',
+				success:function(response){
+					
+					var rows = ""
+					$.each(response,function(key,value){
+						rows += `<tr>
+					<td class="col-md-2"><img src="/${value.product.product_thambnail}" alt="imga"></td>
+					<td class="col-md-7">
+						<div class="product-name"><a href="#">${value.product.product_name_en}</a></div>
+					
+						<div class="price">
+						${value.product.discount_price == null
+						? `${value.product.selling_price}`
+						: `${value.product.discount_price}
+							<span>${value.product.selling_price}</span>`
+						}							
+						</div>
+					</td>
+					<td class="col-md-2">
+					<button class="btn btn-primary icon" type="button" title="Add Cart" data-toggle="modal" data-target="#exampleModal"
+                    id="${value.product.product_id} " onclick="productView(this.id)">Add To Cart </button>
+					</td>
+					<td class="col-md-1 close-btn">
+						<button type="submit"  class="" id="${value.id}" onclick="wishlistRemove(this.id)"><i class="fa fa-times"></i></button>
+					</td>
+				</tr>
+				`
+					});
+					$('#wishlist').html(rows);
+				}
+			})
+		}
+
+		wishlist();
+
+			////// Wishlist Remove Start////////////
+
+	function wishlistRemove(id){
+		$.ajax({
+			type:'GET',
+			url:'/user/wishlist-remove/'+id,
+			dataType:'json',
+			success:function(data){
+				wishlist()
+
+				//start message
+				const Toast = Swal.mixin({
+								toast :true,
+								position : 'top-end',
+							
+								showConfirmButton : false,
+								timer:5000
+							})
+							if($.isEmptyObject(data.error)){
+								Toast.fire({
+									type :'success',
+									title: data.success
+								})
+
+							}else{
+								Toast.fire({
+									type :'error',
+									icon : 'error',
+									title: data.error
+							})
+						}
+						//end message
+
+			}
+		})
+
+	}
+
+	////// Wishlist Remove End////////////	
+
+
+		</script>
+
+	<!-- ///////// End Load Wish List Data///////// -->
 	
 </body>
 </html>
