@@ -21,7 +21,7 @@ class CartController extends Controller
                 'qty' => $request->quantity,
                 'price'=> $product->selling_price,
                 'weight' =>1,
-                'option' => [
+                'options' => [
                     'image' => $product->product_thambnail,
                     'color' => $request->color,
                     'size' => $request->size,
@@ -36,7 +36,7 @@ class CartController extends Controller
                 'qty' => $request->quantity,
                 'price'=> $product->discount_price,
                 'weight' =>1,
-                'option' => [
+                'options' => [
                     'image' => $product->product_thambnail,
                     'color' => $request->color,
                     'size' => $request->size,

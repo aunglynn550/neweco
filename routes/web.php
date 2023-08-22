@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\User\CartPageController;
 use App\Http\Controllers\User\WishlistController;
 use GuzzleHttp\Middleware;
 
@@ -204,7 +205,7 @@ Route::get('minicart/product-remove/{rowId}', [CartController::class, 'RemoveMin
 
 Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'],function(){
 
-            //WishList Page
+        //WishList Page
         Route::get('/wishlist', [WishlistController::class, 'ViewWishlist'])->name('wishlist');
 
 
@@ -217,5 +218,17 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
 
         Route::get('/wishlist-remove/{id}', [WishlistController::class, 'RemoveWishlistProduct']);
 
+
+      
 });
+
+
+    //My Cart Page All Routes
+Route::get('/mycart', [CartPageController::class, 'MyCart'])->name('mycart');
+Route::get('/get-cart-product', [CartPageController::class, 'GetCartProduct']);
+Route::get('/cart-remove/{rowId}', [CartPageController::class, 'RemoveCartProduct']);
+
+Route::get('/cart-increment/{rowId}', [CartPageController::class, 'CartIncrement']);
+Route::get('/cart-decrement/{rowId}', [CartPageController::class, 'CartDecrement']);
+
 
