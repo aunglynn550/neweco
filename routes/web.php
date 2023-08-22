@@ -8,6 +8,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Backend\AdminProfileController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\CouponController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\SliderController;
@@ -125,6 +126,23 @@ Route::prefix('slider')->group(function(){
 
     Route::get('inactive/{id}',[SliderController::class,'SliderInactive'])->name('slider.inactive');
     Route::get('active/{id}',[SliderController::class,'SliderActive'])->name('slider.active');
+
+});
+
+
+
+
+
+//Admin Coupon All Routes
+
+Route::prefix('coupons')->group(function(){
+
+    Route::get('/view',[CouponController::class,'CouponView'])->name('manage-coupon');
+    Route::post('/store',[CouponController::class,'CouponStore'])->name('coupon.store');
+    Route::get('/edit/{id}',[CouponController::class,'CouponEdit'])->name('coupon.edit');
+    Route::post('/update/{id}',[CouponController::class,'CouponUpdate'])->name('coupon.update');
+    Route::get('/delete/{id}',[CouponController::class,'CouponDelete'])->name('coupon.delete');
+   
 
 });
 
