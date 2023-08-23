@@ -42,7 +42,13 @@ My Cart Page
 			</tbody>
 		</table>
 	</div>
-</div>			</div><!-- /.row -->
+</div>		
+
+
+
+
+
+</div><!-- /.row -->
 		</div><!-- /.sigin-in-->
         <br>
         @include('frontend.body.brand')
