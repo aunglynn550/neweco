@@ -1,7 +1,7 @@
 @extends('admin.admin_master')
 
 @section('admin')
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!-- Main Content -->
 
 	  <div class="container-full">
