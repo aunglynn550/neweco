@@ -142,62 +142,62 @@ My Check Out
 					</div><!-- /.checkout-steps -->
 				</div>
 				<div class="col-md-4">
-					<!-- checkout-progress-sidebar -->
-<div class="checkout-progress-sidebar ">
-	<div class="panel-group">
-		<div class="panel panel-default">
-			<div class="panel-heading">
-		    	<h4 class="unicase-checkout-title">Your Checkout Progress</h4>
-		    </div>
-		    <div class="">
-				<ul class="nav nav-checkout-progress list-unstyled">
-					@foreach($carts as $item)
-					<li>
-						<strong>Image: </strong>
-						<img src="{{ asset($item->options->image) }}" style="height: 50px; width: 50px;">
-					</li>
-					<li>
-						<strong>Qty: </strong>
-						( {{ $item->qty }} )
-						
-						<strong>Color: </strong>
-						{{ $item->options->color }}
-						
-						<strong>Size: </strong>
-						{{ $item->options->size }}
-					</li>
-					
-					@endforeach
-					<li>
-					@if(Session::has('coupon'))
+				<!-- checkout-progress-sidebar -->
+				<div class="checkout-progress-sidebar ">
+					<div class="panel-group">
+						<div class="panel panel-default">
+							<div class="panel-heading">
+								<h4 class="unicase-checkout-title">Your Checkout Progress</h4>
+							</div>
+							<div class="">
+								<ul class="nav nav-checkout-progress list-unstyled">
+									@foreach($carts as $item)
+									<li>
+										<strong>Image: </strong>
+										<img src="{{ asset($item->options->image) }}" style="height: 50px; width: 50px;">
+									</li>
+									<li>
+										<strong>Qty: </strong>
+										( {{ $item->qty }} )
+										
+										<strong>Color: </strong>
+										{{ $item->options->color }}
+										
+										<strong>Size: </strong>
+										{{ $item->options->size }}
+									</li>
+									
+									@endforeach
+									<li>
+									@if(Session::has('coupon'))
 
-						<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+										<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
 
-						<strong>Coupon Name : </strong> {{ session()->get('coupon')['coupon_name'] }}
-						( {{ session()->get('coupon')['coupon_discount'] }} % )
-						<hr>
+										<strong>Coupon Name : </strong> {{ session()->get('coupon')['coupon_name'] }}
+										( {{ session()->get('coupon')['coupon_discount'] }} % )
+										<hr>
 
-						<strong>Coupon Discount : </strong> ${{ session()->get('coupon')['discount_amount'] }} 
-						<hr>
+										<strong>Coupon Discount : </strong> ${{ session()->get('coupon')['discount_amount'] }} 
+										<hr>
 
-						<strong>Grand Total : </strong> ${{ session()->get('coupon')['total_amount'] }} 
-						<hr>
-
-
-									@else
-
-						<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
-
-						<strong>Grand Total : </strong> ${{ $cartTotal }} <hr>
+										<strong>Grand Total : </strong> ${{ session()->get('coupon')['total_amount'] }} 
+										<hr>
 
 
-									@endif 
-					</li>
-				</ul>		
-			</div>
-		</div>
-	</div>
-</div> 
+													@else
+
+										<strong>SubTotal: </strong> ${{ $cartTotal }} <hr>
+
+										<strong>Grand Total : </strong> ${{ $cartTotal }} <hr>
+
+
+													@endif 
+									</li>
+								</ul>		
+							</div>
+						</div>
+					</div>
+				</div> 
 <!-- checkout-progress-sidebar -->			
 
 

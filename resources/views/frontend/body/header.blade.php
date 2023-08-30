@@ -63,7 +63,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img src="{{ asset('frontend/assets/images/logo.png') }}" alt="logo"> </a> </div>
+          <div class="logo"> <a href="home.html"> <img class="frontend-logo" src="{{ asset('frontend/assets/images/A-logos_black.png') }}" alt="logo"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->

@@ -479,6 +479,12 @@ img[src="assets/images/blank.gif"] {
   position: absolute;
   top: 2px;
 }
+
+.frontend-logo{
+  width: 298px;
+  height: 50px;
+
+}
 .logo-slider .owl-controls .owl-prev,
 .logo-slider .owl-controls .owl-next {
   top: -57px;
