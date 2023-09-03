@@ -63,7 +63,7 @@
       <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-3 logo-holder"> 
           <!-- ============================================================= LOGO ============================================================= -->
-          <div class="logo"> <a href="home.html"> <img class="frontend-logo" src="{{ asset('frontend/assets/images/A-logos_black.png') }}" alt="logo"> </a> </div>
+          <div class="logo"> <a href="{{ route('home') }}"> <img class="frontend-logo" src="{{ asset('frontend/assets/images/A-logos_black.png') }}" alt="logo"> </a> </div>
           <!-- /.logo --> 
           <!-- ============================================================= LOGO : END ============================================================= --> </div>
         <!-- /.logo-holder -->
@@ -152,8 +152,8 @@
           <div class="navbar-collapse collapse" id="mc-horizontal-menu-collapse">
             <div class="nav-outer">
               <ul class="nav navbar-nav">
-              <li class="active dropdown yamm-fw"> <a href="{{ url('/') }}" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">Home</a> </li>
-
+              <li class="active dropdown yamm-fw"> <a href="{{ route('home') }}"  class="dropdown-toggle" >Home</a> </li>
+            
                 <!--   // Get Category Table Data -->
                   @php
                   $categories = App\Models\Category::orderBy('category_name_en','ASC')->get();

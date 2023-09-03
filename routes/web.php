@@ -18,9 +18,11 @@ use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Frontend\IndexController;
 use App\Http\Controllers\Frontend\LanguageController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\User\AllUserController;
 use App\Http\Controllers\User\CartPageController;
 use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\StripeController;
+use App\Http\Controllers\User\CashController;
 use App\Http\Controllers\User\WishlistController;
 use GuzzleHttp\Middleware;
 
@@ -42,7 +44,7 @@ Route::middleware('admin:admin')->group(function (){
 
 Route::middleware(['auth:admin'])->group(function (){
 
-    // Admin All Routes
+   /////////////////////////////// // Admin All Routes ////////// ///////////////////// /////////////////////////
 
 Route::get('/admin/logout',[AdminController::class,'destroy'])->name('admin.logout');
 Route::get('/admin/profile',[AdminProfileController::class,'AdminProfile'])->name('admin.profile');
@@ -196,7 +198,9 @@ Route::middleware(['auth:sanctum,admin',config('jetstream.auth_session'),'verifi
 
 
 
-//User All Routes
+
+
+///////   ////////////   ////////   ///////  User All Routes //////////  //////////   /////////////   //////////  //////////
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
 
@@ -207,7 +211,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     })->name('dashboard');
 
 });
-Route::get('/',[IndexController::class,'Index']);
+Route::get('/',[IndexController::class,'Index'])->name('home');
 Route::get('user/logout',[IndexController::class,'UserLogout'])->name('user.logout');
 Route::get('user/profile',[IndexController::class,'UserProfile'])->name('user.profile');
 Route::post('user/profile/store',[IndexController::class,'UserProfileStore'])->name('user.profile.store');
@@ -216,14 +220,11 @@ Route::post('user/update/password',[IndexController::class,'UserPasswordUpdate']
 
 
 
+//// //////// //////// Frontend All Routes ///// ////// /////////// ////// ///////
 
 
-
-//// Frontend All Routes /////
 /// Multi Language All Routes ////
-
 Route::get('/language/hindi', [LanguageController::class, 'Hindi'])->name('hindi.language');
-
 Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
 
 
@@ -272,10 +273,17 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
 
 
         Route::get('/wishlist-remove/{id}', [WishlistController::class, 'RemoveWishlistProduct']);
-
-
-
+        
         Route::post('/stripe/order', [StripeController::class, 'StripeOrder'])->name('stripe.order');
+
+        Route::post('/cash/order', [CashController::class, 'CashOrder'])->name('cash.order');
+        
+       
+     ///////  /////////  //////////  //// User Orders  ////// ////////  ////////////  //////////////  
+        Route::get('/my/orders/', [AllUserController::class, 'MyOrders'])->name('my.orders');
+        Route::get('/order_details/{order_id}', [AllUserController::class, 'OrderDetails']);
+
+
 
 
 });
