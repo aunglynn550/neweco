@@ -1,17 +1,33 @@
-@extends('frontend.main_master')
-@section('content')
-<div class="body-content">
-    <div class="container">
-        <div class="row">
-           
-        @include('frontend.common.user_sidebar')
-         
-         <div class="col-md-5">
-            <div class="card">
-                <div class="card-header"><h4>Shipping Details</h4></div>
-                <hr>
-                <div class="card-body" style="background: #E9EBEC;">
-                    <table class="table">
+@extends('admin.admin_master')
+
+@section('admin')
+
+<div class="content-header">
+			<div class="d-flex align-items-center">
+				<div class="mr-auto">
+					<h3 class="page-title">Order Details</h3>
+					<div class="d-inline-block align-items-center">
+						<nav>
+							<ol class="breadcrumb">
+								<li class="breadcrumb-item"><a href="#"><i class="mdi mdi-home-outline"></i></a></li>
+								<li class="breadcrumb-item" aria-current="page">Order Details</li>								
+							</ol>
+						</nav>
+					</div>
+				</div>
+			</div>
+		</div>
+<!-- Main Content -->
+<div class="content">
+    <div class="row">
+
+    
+    <div class="col-md-6 col-12">
+				<div class="box box-bordered border-primary">
+				  <div class="box-header with-border">
+					<h4 class="box-title"><strong>Shipping Details</strong> </h4>
+				  </div>
+				  <table class="table">
                     <tr>
                         <th> Shipping Name : </th>
                         <th> {{ $order->name }} </th>
@@ -54,19 +70,17 @@
 
                     
                     </table>
-                </div><!-- ./card-body -->
-            </div><!-- ./card -->
+				</div>
+	</div><!-- end 1st col-md-6 -->
 
-         </div><!-- 1st ./col-md-5 -->
-
-         <div class="col-md-5">
-            <div class="card">
-                <div class="card-header"><h4>Order Details</h4>
-                <span class="text-danger">Invoice : {{ $order->invoice_no }}</span>
-            </div>
-                <hr>
-                <div class="card-body" style="background: #E9EBEC;">
-                    <table class="table">
+    
+    <div class="col-md-6 col-12">
+				<div class="box box-bordered border-primary">
+				  <div class="box-header with-border">
+					<h4 class="box-title"><strong>Order Details</strong></h4>
+                    <span class="text-danger">Invoice : {{ $order->invoice_no }}</span>
+				  </div>
+                  <table class="table">
                     <tr>
                     <th>  Name : </th>
                     <th> {{ $order->user->name }} </th>
@@ -107,24 +121,17 @@
 
                     
                     </table>
-                </div><!-- ./card-body -->
-            </div><!-- ./card -->
-
-         </div><!--2nd ./col-md-5 -->
-
-       
-
-        </div> <!-- End Row -->
+				</div>
+	</div><!-- end 2nd col-md-6 -->
 
 
-        <div class="row">
-
-
-
-<div class="col-md-12">
-
-        <div class="table-responsive">
-          <table class="table">
+    
+    <div class="col-md-12 col-12">
+				<div class="box box-bordered border-primary">
+				  <div class="box-header with-border">
+					
+				  </div>
+                  <table class="table">
             <tbody>
 
               <tr style="background: #e2e2e2;">
@@ -132,11 +139,11 @@
                   <label for=""> Image</label>
                 </td>
 
-                <td class="col-md-3">
+                <td class="col-md-2">
                   <label for=""> Product Name </label>
                 </td>
 
-                <td class="col-md-3">
+                <td class="col-md-2">
                   <label for=""> Product Code</label>
                 </td>
 
@@ -153,7 +160,7 @@
                   <label for=""> Quantity </label>
                 </td>
 
-                <td class="col-md-1">
+                <td class="col-md-3">
                   <label for=""> Price </label>
                 </td>
 
@@ -166,12 +173,12 @@
                   <label for=""><img src="{{ asset($item->product->product_thambnail) }}" height="50px;" width="50px;"> </label>
                 </td>
 
-                <td class="col-md-3">
+                <td class="col-md-2">
                   <label for=""> {{ $item->product->product_name_en }}</label>
                 </td>
 
 
-                 <td class="col-md-3">
+                 <td class="col-md-2">
                   <label for=""> {{ $item->product->product_code }}</label>
                 </td>
 
@@ -183,11 +190,11 @@
                   <label for=""> {{ $item->size }}</label>
                 </td>
 
-                 <td class="col-md-2">
+                 <td class="col-md-1">
                   <label for=""> {{ $item->qty }}</label>
                 </td>
 
-          <td class="col-md-2">
+                <td class="col-md-4">
                   <label for=""> ${{ $item->price }}  ( $ {{ $item->price * $item->qty}} ) </label>
                 </td>
 
@@ -201,28 +208,10 @@
             </tbody>
 
           </table>
+				</div>
+	</div><!-- end  col-md-12 -->
 
-        </div>
-
-
-       </div> <!-- / end col md 8 -->
-
-      </div> <!-- //row -->
-
-      @if($order->status !== "delivered")
-
-        @else
-
-
-
-        <div class="form-group">
-
-        <label for="label"> Order Return Reason:</label>
-        <textarea name="return_reason" id="" class="form-control" cols="30" rows="05">Return Reason</textarea>
-
-        </div>
-        @endif
-
-
-
+    </div> <!-- end row -->
+   
+   </div> <!-- end main conent -->
 @endsection
