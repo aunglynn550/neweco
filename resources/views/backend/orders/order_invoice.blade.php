@@ -52,7 +52,7 @@
         </td>
         <td align="right">
             <pre class="font" >
-               HappyShop Head Office
+                HappyShop Head Office   
                Email:happyOnlineShopping@shop.com <br>
                Mob: 1245454545 <br>
                Dhaka 1207,Dhanmondi:#4 <br>

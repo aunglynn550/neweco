@@ -44,8 +44,8 @@
 								
 								
 								<td width="25%">
-                                    <a href="{{ route('pending.order.details',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-eye"></i></a>								
-								  <a href="{{ route('coupon.delete',$item->id) }}" title="Delete Data" id="delete" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                                    <a href="{{ route('pending.order.details',$item->id) }}" title="View Data" class="btn btn-info"><i class="fa fa-eye"></i></a>								
+								  
                                 </td>								
 							</tr>
 						    @endforeach
