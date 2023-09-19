@@ -16,6 +16,7 @@ use App\Http\Controllers\Backend\ShippingAreaController;
 use App\Http\Controllers\Backend\SliderController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\BlogController;
+use App\Http\Controllers\Backend\SiteSettingController;
 
 
 use App\Http\Controllers\Frontend\IndexController;
@@ -221,6 +222,18 @@ Route::prefix('blog')->group(function(){
  Route::get('/add/post',[BlogController::class,'AddBlogPost'])->name('add.post');  
  Route::get('/list/post',[BlogController::class,'ListBlogPost'])->name('list.post');  
  Route::post('/post/store',[BlogController::class,'BlogPostStore'])->name('post-store');  
+
+});
+
+
+/////// //// Site Setting Routes // // //// /// ////
+
+Route::prefix('setting')->group(function(){
+
+    Route::get('/site',[SiteSettingController::class,'SiteSetting'])->name('site.setting');     
+    Route::post('/site/update', [SiteSettingController::class, 'SiteSettingUpdate'])->name('update.sitesetting');
+    Route::get('/seo',[SiteSettingController::class,'SEOSetting'])->name('seo.setting');  
+    Route::post('/seo/update', [SiteSettingController::class, 'SeoSettingUpdate'])->name('update.seosetting');   
 
 });
 
