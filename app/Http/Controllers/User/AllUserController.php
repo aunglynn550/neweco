@@ -53,6 +53,7 @@ class AllUserController extends Controller
         Order::findOrFail($order_id)->update([
             'return_date' => Carbon::now()->format('d F Y'),
             'return_reason' => $request->return_reason,
+            'return_order' => 1,
         ]);
 
         $notification = array(
@@ -66,7 +67,7 @@ class AllUserController extends Controller
     public function ReturnOrderList(){
         $id = Auth::user()->id;
         $user = User::find($id);
-        $orders = Order::where('user_id', Auth::id())->where('return_reason','!=','NULL')->orderBy('id','DESC')->get();
+        $orders = Order::where('user_id', Auth::id())->where('return_reason','!=',NULL)->orderBy('id','DESC')->get();
         return view('frontend.user.order.return_order_view',compact('orders','user'));
     }//end method
 
