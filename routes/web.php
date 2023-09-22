@@ -30,6 +30,7 @@ use App\Http\Controllers\User\CheckoutController;
 use App\Http\Controllers\User\StripeController;
 use App\Http\Controllers\User\CashController;
 use App\Http\Controllers\User\WishlistController;
+use App\Http\Controllers\User\ReviewController;
 use GuzzleHttp\Middleware;
 
 /*
@@ -292,6 +293,16 @@ Route::middleware(['auth:sanctum,admin',config('jetstream.auth_session'),'verifi
 
 
 
+///// Admin Product Review //////////////
+Route::prefix('review')->group(function(){
+
+    Route::get('/pending', [ReviewController::class, 'PendingReview'])->name('pending.review');
+    Route::get('/admin/approve/{id}', [ReviewController::class, 'ReviewApprove'])->name('review.approve');
+    Route::get('/publish', [ReviewController::class, 'PublishReview'])->name('publish.review');
+    Route::get('/delete/{id}', [ReviewController::class, 'DeleteReview'])->name('delete.review');
+    
+    });
+
 
 
 ///////   ////////////   ////////   ///////  User All Routes //////////  //////////   /////////////   //////////  //////////
@@ -423,3 +434,7 @@ Route::get('/district-get/ajax/{division_id}', [CheckoutController::class, 'Dist
 Route::get('/state-get/ajax/{district_id}', [CheckoutController::class, 'StateGetAjax']);
 
 Route::post('/checkout/store', [CheckoutController::class, 'CheckoutStore'])->name('checkout.store');
+
+
+//// Frontend Product Review ////////
+Route::post('/review/store', [ReviewController::class, 'ReviewStore'])->name('review.store');
