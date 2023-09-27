@@ -14,11 +14,26 @@ class CreateAdminsTable extends Migration
     public function up()
     {
         Schema::create('admins', function (Blueprint $table) {
-            $table->id();
+            $table->id();           
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('brand')->nullable();
+            $table->string('category')->nullable();
+            $table->string('product')->nullable();
+            $table->string('slider')->nullable();
+            $table->string('coupons')->nullable();
+            $table->string('shipping')->nullable();
+            $table->string('blog')->nullable();
+            $table->string('setting')->nullable();
+            $table->string('returnorder')->nullable();
+            $table->string('review')->nullable();
+            $table->string('orders')->nullable();
+            $table->string('stock')->nullable();
+            $table->string('reports')->nullable();
+            $table->string('alluser')->nullable();
+            $table->string('adminuserrole')->nullable();
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();

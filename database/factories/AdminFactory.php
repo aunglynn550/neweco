@@ -24,6 +24,14 @@ class AdminFactory extends Factory
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
             'password' => Hash::make('12345'), // 12345
+            'brand' =>'1',
+            'category' =>'1',
+            'product' =>'1',
+            'slider' =>'1',
+            'coupons' =>'1',
+            'shipping' =>'1',
+            'returnorder' =>'1',
+            'review' =>'1',
             'remember_token' => Str::random(10),
         ];
     }
