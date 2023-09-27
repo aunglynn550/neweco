@@ -16,7 +16,7 @@
 			<div class="box-body">
 			  <div class="row">
 				<div class="col">
-                    <form method="post" action="{{ route('admin.user.update') }}" enctype="multipart/form-data" >
+                    <form method="post" action="{{ route('admin.user.update', $adminuser->id) }}" enctype="multipart/form-data" >
                         @csrf
 
                     <input type="hidden" name="id" value="{{ $adminuser->id }}">	

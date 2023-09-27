@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use Image;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
 
 class AdminUserController extends Controller
@@ -79,7 +80,7 @@ class AdminUserController extends Controller
     } // end method 
 
 
-	public function UpdateAdminRole(Request $request){
+	public function UpdateAdminRole(Request $request,$id){
 
     	$admin_id = $request->id;
     	$old_img = $request->old_image;
@@ -131,7 +132,7 @@ class AdminUserController extends Controller
 
     	}else{
 
-    	Admin::findOrFail($admin_id)->update([
+    	Admin::findOrFail($id)->update([
 		'name' => $request->name,
 		'email' => $request->email,
 

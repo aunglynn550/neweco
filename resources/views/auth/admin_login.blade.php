@@ -34,7 +34,7 @@
 
 							    <form method="POST" action="{{ isset($guard)? url($guard.'/login'): route('login') }}">
                                     @csrf
-
+								
 								<div class="form-group">
 									<div class="input-group mb-3">
 										<div class="input-group-prepend">

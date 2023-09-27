@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 
 use App\Models\Admin;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
 
 class AdminFactory extends Factory
 {
@@ -22,7 +23,7 @@ class AdminFactory extends Factory
             'name' => 'Admin',
             'email' => 'admin@gmail.com',
             'email_verified_at' => now(),
-            'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // 12345
+            'password' => Hash::make('12345'), // 12345
             'remember_token' => Str::random(10),
         ];
     }

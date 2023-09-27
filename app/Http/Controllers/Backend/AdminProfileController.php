@@ -30,8 +30,8 @@ class AdminProfileController extends Controller
 
     public function AdminProfileStore(Request $request){
 
-        $id = Auth::user()->id;
-        $data = Admin::find($id);
+        
+        $data = Admin::find(Auth::id());
 
         if($request->file('profile_photo_path'))
         {
@@ -40,8 +40,10 @@ class AdminProfileController extends Controller
           $filename = date('YmdHi').$file->getClientOriginalName();
           $request->profile_photo_path->move(public_path('upload/admin_images'),$filename);
  
-         $data['profile_photo_path'] = $filename;
+         $data['profile_photo_path'] = 'upload/admin_images/'.$filename;
         }
+        $data['name']=$request->name;
+        $data['email']=$request->email;
  
         $data->save();
  

@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Total Admin User </h3>
+				  <h3 class="box-title text-info">Total Admin User </h3>
                   <a href="{{ route('add.admin') }}" class="btn btn-danger" style="float: right;">Add Admin User</a>
 				</div>
 				<!-- /.box-header -->
