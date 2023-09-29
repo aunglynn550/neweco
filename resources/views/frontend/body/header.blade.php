@@ -6,8 +6,8 @@
       <div class="header-top-inner">
         <div class="cnt-account">
           <ul class="list-unstyled">
-          <li><a href="#"><i class="icon fa fa-user"></i>
-          @if(session()->get('language') == 'hindi') मेरी प्रोफाइल @else My Account @endif
+          <li><a href="{{ route('dashboard') }}"><i class="icon fa fa-user"></i>
+          @if(session()->get('language') == 'china') 中國 @else My Account @endif
             </a></li>
             <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
             <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>           
@@ -15,9 +15,9 @@
             <li>
           
               @auth
-              <a href="#"><i class="icon fa fa-user"></i>User Profile</a>
+              <a href="{{ route('dashboard') }}"></i>User Profile</a>
               @else
-              <a href="#"><i class="icon fa fa-lock"></i>Login/Register</a>
+              <a href="#"></i>Login/Register</a>
               @endauth
               
             </li>
@@ -35,14 +35,14 @@
               </ul>
             </li>
             <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">
-            @if(session()->get('language') == 'hindi') भाषा: हिन्दी @else Language @endif
-              </span><b class="caret"></b></a>
+            @if(session()->get('language') == 'china') 中國 @else Language @endif
+            
             <li class="dropdown dropdown-small"> <a href="#" class="dropdown-toggle" data-hover="dropdown" data-toggle="dropdown"><span class="value">English </span><b class="caret"></b></a>
               <ul class="dropdown-menu">
-              @if(session()->get('language') == 'hindi')       
+              @if(session()->get('language') == 'china')       
               <li><a href="{{ route('english.language') }}">English</a></li>
               @else
-              <li><a href="{{ route('hindi.language') }}">हिन्दी</a></li>
+              <li><a href="{{ route('china.language') }}">中國</a></li>
               @endif     
               </ul>
             </li>
@@ -90,7 +90,11 @@
                   </li>
                 </ul>
                 <input class="search-field" placeholder="Search here..." />
-                <a class="search-button" href="#" ></a> </div>
+                <span class="search-icon-box">
+                  <a class="search-button" href="#" ></a>
+                </span>
+               
+               </div>
             </form>
           </div>
           <!-- /.search-area --> 
@@ -166,7 +170,7 @@
 
                 @foreach($categories as $category)
                   <li class="dropdown yamm mega-menu"> <a href="home.html" data-hover="dropdown" class="dropdown-toggle" data-toggle="dropdown">
-                  @if(session()->get('language') == 'hindi') {{ $category->category_name_hin }}
+                  @if(session()->get('language') == 'china') {{ $category->category_name_chi }}
                   @else{{ $category->category_name_en }} @endif
                   </a>
                     <ul class="dropdown-menu container">
@@ -185,7 +189,7 @@
                               <a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en) }}">
 
                                 <h2 class="title">
-                                  @if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }}  
+                                  @if(session()->get('language') == 'china') {{ $subcategory->subcategory_name_chi }}  
                                   @else{{ $subcategory->subcategory_name_en }}
                                   @endif 
                                 </h2>
@@ -196,9 +200,9 @@
                   @endphp          
 
                   @foreach($subsubcategories as $subsubcategory)
-                              <ul class="links">
+                              <ul class="links text-black">
                                 <li><a href="{{ url('subsubcategory/product/'.$subsubcategory->id.'/'.$subsubcategory->subsubcategory_slug_en) }}">
-                                @if(session()->get('language') == 'hindi') {{ $subsubcategory->subsubcategory_name_hin }}  
+                                @if(session()->get('language') == 'china') {{ $subsubcategory->subsubcategory_name_chi }}  
                               @else{{ $subsubcategory->subsubcategory_name_en }}@endif 
                                </a></li>
 

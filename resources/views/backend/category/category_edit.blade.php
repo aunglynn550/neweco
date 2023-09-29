@@ -39,17 +39,17 @@
                   
                       <div class="form-group">
                      
-                            <h5>Category Hindi<span class="text-danger">*</span></h5>
+                            <h5>Category Chinese<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input  type="text" name="category_name_hin" class="form-control" value="{{ $category->category_name_hin }}"> 
-                                @error('category_name_hin')
+                                <input  type="text" name="category_name_chi" class="form-control" value="{{ $category->category_name_chi }}"> 
+                                @error('category_name_chi')
                                 <span class="btn btn-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             
                       </div><!--End-Form-Group-->
                   
-
+                   
                   
                       <div class="form-group">
                      

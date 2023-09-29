@@ -110,10 +110,10 @@
                   
                       <div class="form-group">
                      
-                            <h5>Sub-SubCategory Hindi<span class="text-danger">*</span></h5>
+                            <h5>Sub-SubCategory Chinese<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input  type="text" name="subsubcategory_name_hin" class="form-control" > 
-                                @error('subsubcategory_name_hin')
+                                <input  type="text" name="subsubcategory_name_chi" class="form-control" > 
+                                @error('subsubcategory_name_chi')
                                 <span class="btn btn-danger">{{ $message }}</span>
                                 @enderror
                             </div>

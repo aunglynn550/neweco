@@ -19,8 +19,8 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Brand En</th>
-								<th>Brand Hin</th>
+								<th>Brand English</th>
+								<th>Brand Chinese</th>
 								<th>Image</th>
 								<th>Action</th>
 								
@@ -30,7 +30,7 @@
                 @foreach($brands as $item)
 							<tr>
 								<td>{{ $item->brand_name_en }}</td>
-								<td>{{ $item->brand_name_hin }}</td>
+								<td>{{ $item->brand_name_chi }}</td>
 								<td><img src="{{ asset($item->brand_image)  }}" style="width:70px;" height="40px" alt="" srcset=""></td>
 								<td>
                   <a href="{{ route('brand.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
@@ -82,10 +82,10 @@
                   
                       <div class="form-group">
                      
-                            <h5>Brand Name Hindi<span class="text-danger">*</span></h5>
+                            <h5>Brand Name Chinese<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input  type="text" name="brand_name_hin" class="form-control" > 
-                                @error('brand_name_hin')
+                                <input  type="text" name="brand_name_chi" class="form-control" > 
+                                @error('brand_name_chi')
                                 <span class="btn btn-danger">{{ $message }}</span>
                                 @enderror
                             </div>

@@ -21,7 +21,7 @@ class SubCategoryController extends Controller
         $request->validate([
             'category_id' => 'required',
             'subcategory_name_en' => 'required',
-            'subcategory_name_hin' => 'required',
+            'subcategory_name_chi' => 'required',
         ],[
             'category_id.required' => 'Please Select Any Option',
             'subcategory_name_en.required' => 'Input SubCategory English Name',
@@ -31,9 +31,9 @@ class SubCategoryController extends Controller
         SubCategory::insert([
             'category_id' => $request->category_id,
             'subcategory_name_en' => $request->subcategory_name_en,
-            'subcategory_name_hin' => $request->subcategory_name_hin,
+            'subcategory_name_chi' => $request->subcategory_name_chi,
             'subcategory_slug_en' =>strtolower(str_replace(' ', '-',$request->subcategory_name_en)),
-            'subcategory_slug_hin' => str_replace(' ', '-',$request->subcategory_name_hin),
+            'subcategory_slug_chi' => str_replace(' ', '-',$request->subcategory_name_chi),
         ]);
 
         $notification = array(
@@ -55,7 +55,7 @@ class SubCategoryController extends Controller
         $request->validate([
             'category_id' => 'required',
             'subcategory_name_en' => 'required',
-            'subcategory_name_hin' => 'required',
+            'subcategory_name_chi' => 'required',
         ],[
             'category_id.required' => 'Please Select Any Option',
             'subcategory_name_en.required' => 'Input SubCategory English Name',
@@ -65,9 +65,9 @@ class SubCategoryController extends Controller
         SubCategory::findOrFail($subcat_id)->update([
             'category_id' => $request->category_id,
             'subcategory_name_en' => $request->subcategory_name_en,
-            'subcategory_name_hin' => $request->subcategory_name_hin,
+            'subcategory_name_chi' => $request->subcategory_name_chi,
             'subcategory_slug_en' =>strtolower(str_replace(' ', '-',$request->subcategory_name_en)),
-            'subcategory_slug_hin' => str_replace(' ', '-',$request->subcategory_name_hin),
+            'subcategory_slug_chi' => str_replace(' ', '-',$request->subcategory_name_chi),
         ]);
 
         $notification = array(
@@ -119,7 +119,7 @@ class SubCategoryController extends Controller
             'category_id' => 'required',
             'subcategory_id' => 'required',
             'subsubcategory_name_en' => 'required',
-            'subsubcategory_name_hin' => 'required',
+            'subsubcategory_name_chi' => 'required',
       
         ]);
 
@@ -128,9 +128,9 @@ class SubCategoryController extends Controller
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'subsubcategory_name_en' => $request->subsubcategory_name_en,
-            'subsubcategory_name_hin' => $request->subsubcategory_name_hin,
+            'subsubcategory_name_chi' => $request->subsubcategory_name_chi,
             'subsubcategory_slug_en' =>strtolower(str_replace(' ', '-',$request->subsubcategory_name_en)),
-            'subsubcategory_slug_hin' => str_replace(' ', '-',$request->subsubcategory_name_hin),
+            'subsubcategory_slug_chi' => str_replace(' ', '-',$request->subsubcategory_name_chi),
         ]);
 
         $notification = array(
@@ -157,7 +157,7 @@ class SubCategoryController extends Controller
             'category_id' => 'required',
             'subcategory_id' => 'required',
             'subsubcategory_name_en' => 'required',
-            'subsubcategory_name_hin' => 'required',
+            'subsubcategory_name_chi' => 'required',
         ]);
 
       
@@ -165,9 +165,9 @@ class SubCategoryController extends Controller
             'category_id' => $request->category_id,
             'subcategory_id' => $request->subcategory_id,
             'subsubcategory_name_en' => $request->subsubcategory_name_en,
-            'subsubcategory_name_hin' => $request->subsubcategory_name_hin,
+            'subsubcategory_name_chi' => $request->subsubcategory_name_chi,
             'subsubcategory_slug_en' =>strtolower(str_replace(' ', '-',$request->subsubcategory_name_en)),
-            'subsubcategory_slug_hin' => str_replace(' ', '-',$request->subsubcategory_name_hin),
+            'subsubcategory_slug_chi' => str_replace(' ', '-',$request->subsubcategory_name_chi),
         ]);
 
         $notification = array(

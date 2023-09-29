@@ -30,6 +30,11 @@ Text Domain:  Flipmart
 /*===================================================================================*/
 /*  Body
 /*===================================================================================*/
+:root{
+  --font-family-primary: 'Chivo Mono', monospace;
+  --font-family-secondary: 'Playfair Display', serif;
+  --font-family-semi: 'Work Sans', sans-serif;
+}
 .green-text {
   color: #abd07e !important;
 }
@@ -84,7 +89,9 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Chivo Mono', monospace; */
+  font-family: var(--font-family-secondary);
+  /* font-family: 'Work Sans', sans-serif; */
   background-color: #f3f3f3;
 }
 
@@ -143,7 +150,7 @@ img[src="assets/images/blank.gif"] {
   -ms-transition: all linear 0.2s;
   -o-transition: all linear 0.2s;
   transition: all linear 0.2s;
-  background: #108bea;
+  background: #36483a;
   color: #fff;
   border: none;
   font-size: 13px;
@@ -685,7 +692,7 @@ a {
   color: #12cca7;
 }
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner .total-price-basket .total-price {
-  color: #12cca7;
+  color: #f6f2f2 !important;
 }
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a:hover,
 .top-cart-row .dropdown-cart .dropdown-menu .cart-item.product-summary .name a:focus {
@@ -1124,9 +1131,10 @@ a {
 
 }
 .top-bar .cnt-account ul > li a {
-  color:rgba(255,255,255,0.8);
+  color:rgba(0, 0, 0, 0.8);
   padding: 0px;
-  font-weight: 400;
+  font-weight: 600;
+  font-style: italic;
   -webkit-transition: all 0.2s linear 0s;
   -moz-transition: all 0.2s linear 0s;
   -o-transition: all 0.2s linear 0s;
@@ -1163,8 +1171,11 @@ a {
   display: inline-block;
 }
 .top-bar .cnt-block .list-inline > li > a .value {
-  color: rgba(255,255,255,0.8);
+  color: rgba(0, 0, 0, 0.8);
   margin: 2px 4px 2px 7px;
+  font-size: 14px;
+  font-weight: 500;
+  font-style: italic;
 }
 .top-bar .cnt-block .list-inline > li > a:hover,
 .top-bar .cnt-block .list-inline > li > a:focus {
@@ -1197,7 +1208,7 @@ a {
 /*===================================================================================*/
 /* Header
 /*===================================================================================*/
-header{background:#157ed2}
+header{background:#f4faff}
 
 .main-header {
   padding:5px 0px 12px 0px;
@@ -1235,6 +1246,15 @@ header{background:#157ed2}
   border-radius: 5px 0 0 5px;
   padding: 13px;
   width: 67%;
+}
+.main-header .top-search-holder .search-area .categories-filter::after{
+  content: "";
+  width: 64rem;
+  height: 6px;
+  background-color: black;
+  position: absolute;
+  border-radius: 100%;
+  opacity: 0.3;
 }
 .main-header .top-search-holder .search-area .categories-filter {
   border-right: 1px solid #E0E0E0;
@@ -1277,6 +1297,8 @@ header{background:#157ed2}
   font-family: 'Open Sans', sans-serif;
   line-height: 30px;
 }
+
+
 .main-header .top-search-holder .search-area .search-button {
   border-radius: 0px 3px 3px 0px;
   display: inline-block;
@@ -1284,8 +1306,8 @@ header{background:#157ed2}
   margin: 0px;
   padding: 12px 19px 12px;
   text-align: center;
-    background-color: #fdd922;
-    border: 1px solid #e0bc27;
+  background-color: #fafafa;
+  border: 1px solid #fdfdfd;
 }
 .main-header .top-search-holder .search-area .search-button:after {
   color: #333;
@@ -1304,18 +1326,31 @@ header{background:#157ed2}
 }
 .top-cart-row .dropdown-cart {
   float: right;
+
+}
+.top-cart-row .dropdown-cart::after{
+  content: "";
+  width: 108px;
+  height: 4px;
+  background-color: black;
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.1;
 }
 
 .top-cart-row .dropdown-cart img {width:100%}
 
 .top-cart-row .dropdown-cart .lnk-cart {
   padding: 0px;
-      background: #006cb4;
-    border: 1px solid #24609c;
-  border-radius: 3px;
+  background: #36483a;
+  border: 1px solid #eee;
+  border-radius: 180px;
   display: inline-block;
-  color: #fff;
+  color: #f6f2f2;
+  font-style: italic;
 }
+
+
 .top-cart-row .dropdown-cart .lnk-cart .items-cart-inner {
   position: relative;
 }
@@ -1341,11 +1376,12 @@ header{background:#157ed2}
     left: 34px;
     top: 13px;
     width: 18px;
-    background: #fdd922;
-    color: #0f6cb2;
+    background: #ffff;
+    color: #111213;
     font-size: 11px;
     text-align: center;
-    line-height: 19px;;
+    line-height: 19px;
+    font-weight: 600;
 }
 .top-cart-row .dropdown-cart .dropdown-menu {
   border: 1px solid #e1e1e1;
@@ -1410,13 +1446,13 @@ header{background:#157ed2}
 .navbar-nav {float:none}
 
 .special-menu {float:right}
-.special-menu a {color:#ffdd35!important; border:none!important; padding-right:0px!important} 
-.special-menu a:hover{ background:none!important; color:#fff!important}
+.special-menu a {color:#20543c!important; border:none!important; padding-right:0px!important} 
+.special-menu a:hover{ background:none!important; color:#36483a!important}
 
 .header-style-1 .header-nav .navbar-default .navbar-collapse .navbar-nav > li > a {
   background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
-  color: #FFFFFF;
-  font-family: 'Open Sans', sans-serif;
+  color: #010101;
+  font-family: var(--font-family-secondary);
   font-size: 13px;
   line-height: 20px;
   padding: 11px 15px;
@@ -1543,7 +1579,7 @@ header{background:#157ed2}
 .navbar-nav .open a{
     float: none;
 	background:#fff!important;
-	color:#888!important;
+	color:#060606!important;
 	border-radius:3px 3px 0px 0px;
 }
 
@@ -1556,8 +1592,8 @@ header{background:#157ed2}
 
 .yamm .dropdown-menu .yamm-content .links li a {
   padding: 4px 0px;
-  font-family: 'Open Sans', sans-serif;
-    letter-spacing: 0.2px;
+  font-family: var(--font-family-secondary);
+  letter-spacing: 0.2px;
 	font-size:13px;
 	color:#565656;
 	
@@ -1567,7 +1603,7 @@ header{background:#157ed2}
 .yamm .dropdown-menu h2 {
   font-size: 14px;
   color: #555;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-secondary);
   margin-top: 0px;
   font-weight:bold
 }
@@ -1580,11 +1616,11 @@ header{background:#157ed2}
   transition: all 0.3s ease 0s;
 }
 .yamm .dropdown-menu li a {
-  color: #3D3D3D;
+  color: #010101;
   line-height: normal;
   text-transform: none ;
   display: block;
-  padding: 8px 16px;
+  padding: 8px 0px;
 }
 .yamm .dropdown-menu li a:hover,
 .yamm .dropdown-menu li a:focus {
@@ -1661,16 +1697,16 @@ header{background:#157ed2}
   -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0px;
-  color: #333;
+  color: #fff;
   font-size: 14px;
   font-family: 'Open Sans', sans-serif;
   padding: 12px 17px;
   text-transform: uppercase;
-  background-color: #fdd922;
-    border: 1px solid #e9c532;
+  background-color: #36483a;
+  border: 1px solid #36483a;
 	font-weight:700;
 	letter-spacing: 0.5px;
-	border-bottom:1px #f1ce3c solid
+	border-bottom:1px #36483a solid
 }
 .sidebar .side-menu .head .icon {
   margin-right: 5px;
@@ -1695,7 +1731,7 @@ header{background:#157ed2}
 .sidebar .side-menu nav .nav > li > a {
   padding: 13px 15px;
   color: #666666;
-  font-family: 'Open Sans', sans-serif;
+  font-family: var(--font-family-primary);
   letter-spacing:0.2px
 }
 .sidebar .side-menu nav .nav > li > a:after {
@@ -2619,7 +2655,7 @@ age-container #owl-main .owl-next {
 }
 
 .info-boxes-inner {
-  background-color: #0f6cb2;
+  background-color: #36483a;
   box-shadow: 0 2px 4px 0 rgba(0,0,0,.08);
 }
   
@@ -2763,11 +2799,11 @@ age-container #owl-main .owl-next {
 .product .cart .action ul li.add-cart-button .btn.btn-primary.icon {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
-  background: #fdd922 ;
+  background: #36483a ;
 }
 .product .cart .action ul li.lnk {
   margin: 10px 0px;
-      background: #0f6cb2;
+      background: #36483a;
     margin: 0px;
     padding: 8px 2px;
 	border-left:1px solid hsla(0,0%,100%,.2);
@@ -2779,7 +2815,7 @@ age-container #owl-main .owl-next {
   padding: 8px 10px;
 }
 .product .cart .action ul li.lnk.wishlist {
-	background:#0f6cb2;
+	background:#36483a;
 	margin:0px;
 	border-radius:0px
 	
@@ -2807,7 +2843,7 @@ age-container #owl-main .owl-next {
   z-index: 100;
 }
 .tag.new {
-  background: #46aad7;
+  background: #36483a;
 }
 .tag.hot {
   background: #ff7878;

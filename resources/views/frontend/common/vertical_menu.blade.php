@@ -11,8 +11,11 @@ $categories = App\Models\Category::orderBy('category_name_en','ASC')->get();
 
             @foreach($categories as $category)
               <li class="dropdown menu-item"> <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon {{ $category->category_icon }}" aria-hidden="true"></i>
-              @if(session()->get('language') == 'hindi') {{ $category->category_name_hin }}
-              @else{{ $category->category_name_en }} @endif</a>
+              @if(session()->get('language') == 'hindi')
+              <span> {{ $category->category_name_hin }}</span>
+              @else
+              <span>{{ $category->category_name_en }} @endif</span>
+            </a>
                 <ul class="dropdown-menu mega-menu">
                   <li class="yamm-content">
                     <div class="row">

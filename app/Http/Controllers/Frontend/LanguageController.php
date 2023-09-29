@@ -9,10 +9,10 @@ use Illuminate\Support\Facades\Session;
 class LanguageController extends Controller
 {
     //
-    public function Hindi(){
+    public function China(){
         session()->get('language');
         session()->forget('language');
-        Session::put('language','hindi');
+        Session::put('language','china');
         return redirect()->back();
     }
 

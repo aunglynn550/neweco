@@ -358,7 +358,7 @@ Route::get('/blog/category/post/{category_id}',[HomeBlogController::class,'HomeB
 
 
 /// Multi Language All Routes ////
-Route::get('/language/hindi', [LanguageController::class, 'Hindi'])->name('hindi.language');
+Route::get('/language/china', [LanguageController::class, 'China'])->name('china.language');
 Route::get('/language/english', [LanguageController::class, 'English'])->name('english.language');
 
 

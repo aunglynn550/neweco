@@ -15,7 +15,8 @@ class CreateShipDivisionsTable extends Migration
     {
         Schema::create('ship_divisions', function (Blueprint $table) {
             $table->id();
-            $table->string('division_name');
+            $table->string('division_name_en');
+            $table->string('division_name_chi');
             $table->timestamps();
         });
     }

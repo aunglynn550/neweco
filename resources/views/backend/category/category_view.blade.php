@@ -21,7 +21,7 @@
 							<tr>
 								<th>Category Icon</th>
 								<th>Category Name English</th>
-								<th>Category Name Hindi</th>
+								<th>Category Name Chinese</th>
 								<th>Action</th>
 								
 							</tr>
@@ -31,7 +31,7 @@
 							<tr>
 								<td> <span> <i class="{{ $item->category_icon }}"></i> </span> </td>
 								<td>{{ $item->category_name_en }}</td>
-								<td>{{ $item->category_name_hin }}</td>
+								<td>{{ $item->category_name_chi }}</td>
 								
 								<td>
                   <a href="{{ route('category.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
@@ -83,10 +83,10 @@
                   
                       <div class="form-group">
                      
-                            <h5>Category Hindi<span class="text-danger">*</span></h5>
+                            <h5>Category Chinese<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input  type="text" name="category_name_hin" class="form-control" > 
-                                @error('category_name_hin')
+                                <input  type="text" name="category_name_chi" class="form-control" > 
+                                @error('category_name_chi')
                                 <span class="btn btn-danger">{{ $message }}</span>
                                 @enderror
                             </div>

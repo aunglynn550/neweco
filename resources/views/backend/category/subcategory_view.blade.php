@@ -21,7 +21,7 @@
 							<tr>
 								<th>Category</th>
 								<th>SubCategory English</th>
-								<th>SubCategory Hindi</th>
+								<th>SubCategory Chinese</th>
 								<th>Action</th>
 								
 							</tr>
@@ -31,7 +31,7 @@
 							<tr>
 								<td>{{ $item['category']['category_name_en'] }}</td>
 								<td>{{ $item->subcategory_name_en }}</td>
-								<td>{{ $item->subcategory_name_hin }}</td>
+								<td>{{ $item->subcategory_name_chi }}</td>
 								
 								<td width="30%">
                                     <a href="{{ route('subcategory.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
@@ -96,10 +96,10 @@
                   
                       <div class="form-group">
                      
-                            <h5>Sub Category Hindi<span class="text-danger">*</span></h5>
+                            <h5>Sub Category Chinese<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input  type="text" name="subcategory_name_hin" class="form-control" > 
-                                @error('subcategory_name_hin')
+                                <input  type="text" name="subcategory_name_chi" class="form-control" > 
+                                @error('subcategory_name_chi')
                                 <span class="btn btn-danger">{{ $message }}</span>
                                 @enderror
                             </div>
