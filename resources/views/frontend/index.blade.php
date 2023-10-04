@@ -502,7 +502,7 @@ Shop From Home
                         
                         <div class="product-info text-left">
                           <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en) }}">
-                              @if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} 
+                              @if(session()->get('language') == 'china') {{ $product->product_name_chi }} 
                               @else{{ $product->product_name_en }}
                               @endif                            </a></h3>
                           <div class="rating rateit-small"></div>

@@ -12,13 +12,14 @@ class CartPageController extends Controller
 {
     //
     public function MyCart(){
+        // Cart::destroy();    
         return view('frontend.wishlist.view_mycart');
     }//end method
 
     public function GetCartProduct(){
         $carts = Cart::content();
         $cartQty = Cart::count();
-        $cartTotal = Cart::total();
+        $cartTotal = (int)str_replace(',', '', Cart::total());
         return response()->json(array(
             'carts' => $carts,
             'cartQty' => $cartQty,

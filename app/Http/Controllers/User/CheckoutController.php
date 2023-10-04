@@ -19,7 +19,7 @@ class CheckoutController extends Controller
     //
     public function DistrictGetAjax($division_id){        
 
-    	$ship = ShipDistrict::where('division_id',$division_id)->orderBy('district_name','ASC')->get();
+    	$ship = ShipDistrict::where('division_id',$division_id)->orderBy('district_name_en','ASC')->get();
     	return json_encode($ship);
 
     } // end method 

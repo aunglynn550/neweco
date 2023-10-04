@@ -119,10 +119,10 @@
 
                        <div class="col-md-4">
                        <div class="form-group">
-								<h5>Product Name Hindi <span class="text-danger">*</span></h5>
+								<h5>Product Name Chinese<span class="text-danger">*</span></h5>
 								<div class="controls">
-									<input type="text" name="product_name_hin" class="form-control" > </div>
-                                    @error('product_name_hin')
+									<input type="text" name="product_name_chi" class="form-control" > </div>
+                                    @error('product_name_chi')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
 							</div><!--End-Form-Group-->
@@ -165,7 +165,7 @@
 								<h5>Product Tag En <span class="text-danger">*</span></h5>
 								<div class="controls">
                                 <input type="text" name="product_tags_en" value="" required="" data-role="tagsinput" placeholder="add tags" />  </div>
-                                    @error('product_name_hin')
+                                    @error('product_name_en')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
 							</div><!--End-Form-Group-->
@@ -180,10 +180,10 @@
                        
                        <div class="col-md-4">
                        <div class="form-group">
-								<h5>Product Tag Hindi <span class="text-danger">*</span></h5>
+								<h5>Product Tag Chinese<span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_tags_hin" value="" required="" data-role="tagsinput" placeholder="add tags" />  </div>
-                                    @error('product_tags_hin')
+                                <input type="text" name="product_tags_chi" value="" required="" data-role="tagsinput" placeholder="add tags" />  </div>
+                                    @error('product_tags_chi')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
 							</div><!--End-Form-Group-->
@@ -205,10 +205,10 @@
 
                        <div class="col-md-4">
                        <div class="form-group">
-								<h5>Product Size Hindi <span class="text-danger">*</span></h5>
+								<h5>Product Size Chinese<span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_size_hin" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
-                                    @error('product_size_hin')
+                                <input type="text" name="product_size_chi" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
+                                    @error('product_size_chi')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
 							</div><!--End-Form-Group-->
@@ -235,10 +235,10 @@
 
                        <div class="col-md-4">
                        <div class="form-group">
-								<h5>Product Color Hindi <span class="text-danger">*</span></h5>
+								<h5>Product Color Chinese<span class="text-danger">*</span></h5>
 								<div class="controls">
-                                <input type="text" name="product_color_hin" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
-                                    @error('product_color_hin')
+                                <input type="text" name="product_color_chi" value="Lorem,Ipsum,Amet" required="" data-role="tagsinput" placeholder="add tags" />  </div>
+                                    @error('product_color_chi')
                                    <span class="btn btn-danger">{{ $message }}</span>
                                     @enderror
 							</div><!--End-Form-Group-->
@@ -325,9 +325,9 @@
                        <div class="col-md-6">
                       
                        <div class="form-group">
-								<h5>Short Description Hindi <span class="text-danger">*</span></h5>
+								<h5>Short Description Chinese<span class="text-danger">*</span></h5>
 								<div class="controls">
-									<textarea name="short_descp_hin" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>
+									<textarea name="short_descp_chi" id="textarea" class="form-control" required placeholder="Textarea text"></textarea>
 								</div>                                  
 							</div><!--End-Form-Group-->
                               
@@ -355,9 +355,9 @@
                        <div class="col-md-6">
                       
                        <div class="form-group">
-								<h5>Long Description Hindi <span class="text-danger">*</span></h5>
+								<h5>Long Description chinese<span class="text-danger">*</span></h5>
 								<div class="controls">
-									<textarea id="editor2" required="" rows="10" cols="80" name="long_descp_hin" ></textarea>
+									<textarea id="editor2" required="" rows="10" cols="80" name="long_descp_chi" ></textarea>
 								</div>                                  
 							</div><!--End-Form-Group-->
                               

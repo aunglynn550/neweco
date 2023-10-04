@@ -38,6 +38,7 @@ class AdminUserController extends Controller
 		'name' => $request->name,
 		'email' => $request->email,
 		'password' => Hash::make($request->password),
+		'type' => 2,
 		'phone' => $request->phone,
 		'brand' => $request->brand,
 		'category' => $request->category,
@@ -55,8 +56,7 @@ class AdminUserController extends Controller
 		'stock' => $request->stock,
 		'reports' => $request->reports,
 		'alluser' => $request->alluser,
-		'adminuserrole' => $request->adminuserrole,
-		'type' => 2,
+		'adminuserrole' => $request->adminuserrole,		
 		'profile_photo_path' => $save_url,
 		'created_at' => Carbon::now(),
 
@@ -116,8 +116,7 @@ class AdminUserController extends Controller
 		'stock' => $request->stock,
 		'reports' => $request->reports,
 		'alluser' => $request->alluser,
-		'adminuserrole' => $request->adminuserrole,
-		'type' => 2,
+		'adminuserrole' => $request->adminuserrole,	
 		'profile_photo_path' => $save_url,
 		'created_at' => Carbon::now(),
 

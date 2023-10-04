@@ -3,9 +3,13 @@
 	<!-- @php 
 	$seo = App\Models\Seo::find(1);
 	@endphp -->
+
 <head>
 <!-- /// Google Analytics Code // -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="robots" content="all">
+<meta name="csrf_token" content="{{ csrf_token() }}">
 <title>@yield('title')</title>
 
 <!-- Bootstrap Core CSS -->
@@ -238,7 +242,7 @@
 				var id =$('#product_id').val();
 				var color = $('#color option:selected').text();
 				var size = $('#size option:selected').text();
-				var quantity = $('#qty').val()
+				var quantity = $('#qty').val();
 				$.ajax({
 					type: "POST",
 					dataType:'json',

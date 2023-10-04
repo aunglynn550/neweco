@@ -12,9 +12,10 @@
             <li><a href="{{ route('wishlist') }}"><i class="icon fa fa-heart"></i>Wishlist</a></li>
             <li><a href="{{ route('mycart') }}"><i class="icon fa fa-shopping-cart"></i>My Cart</a></li>           
             <li><a href="{{ route('checkout') }}"><i class="icon fa fa-check"></i>Checkout</a></li>
+            <li><a href="" type="button" data-toggle="modal" data-target="#ordertracking"><i  class="icon fa fa-check"></i>Order Tracking</a></li>
             <li>
           
-              @auth
+              @auth 
               <a href="{{ route('dashboard') }}"></i>User Profile</a>
               @else
               <a href="#"></i>Login/Register</a>
@@ -243,3 +244,31 @@
   <!-- ============================================== NAVBAR : END ============================================== --> 
   
 </header>
+
+
+<!-- Order Checking Modal -->
+<div class="modal fade" id="ordertracking" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Track Your Order</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       
+      <form method="post" action="{{ route('order.tracking') }}">
+        @csrf
+        <div class="modal-body">
+          <label for="">Invoice Code</label>
+          <input type="text" name="code" required="" class="form-control" placeholder="your order invoice number">
+          <br>
+          <button class="btn btn-info" type="submit">Track Order</button>
+        </div>
+      </form>
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>

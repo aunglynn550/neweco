@@ -62,7 +62,7 @@ class CartController extends Controller
     public function AddMiniCart(){
         $carts = Cart::content();
         $cartQty = Cart::count();
-        $cartTotal = Cart::total();
+        $cartTotal = (int)str_replace(',', '', Cart::total());
         return response()->json(array(
             'carts' => $carts,
             'cartQty' => $cartQty,

@@ -392,7 +392,7 @@ Route::get('product/mini/cart/', [CartController::class, 'AddMiniCart']);
 Route::get('minicart/product-remove/{rowId}', [CartController::class, 'RemoveMiniCart']);
 
 
-
+//////////////////// User Must Login For The Routes Below /////////////////////////////////////////////
 Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'],function(){
 
         //WishList Page
@@ -413,7 +413,7 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
         Route::post('/cash/order', [CashController::class, 'CashOrder'])->name('cash.order');
         
        
-     ///////  /////////  //////////  //// User Orders  ////// ////////  ////////////  //////////////  
+        ///  /////////  //////////  //// User Orders  ////// ////////   
         Route::get('/my/orders/', [AllUserController::class, 'MyOrders'])->name('my.orders');
 
         Route::get('/order_details/{order_id}', [AllUserController::class, 'OrderDetails']);
@@ -422,7 +422,9 @@ Route::group(['prefix'=>'user','middleware'=>['user','auth'],'namespace'=>'user'
         Route::post('/return/order/{order_id}', [AllUserController::class, 'ReturnOrder'])->name('return.order');
         Route::get('/return/order/list', [AllUserController::class, 'ReturnOrderList'])->name('return.order.list');
         Route::get('/cancel/order/list', [AllUserController::class, 'CancelOrderList'])->name('cancel.orders');
-
+        
+        //// Order Tracking Routes /////////
+        Route::post('/order/tracking', [AllUserController::class, 'OrderTracking'])->name('order.tracking');
 
 
 
