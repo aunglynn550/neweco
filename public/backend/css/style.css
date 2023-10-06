@@ -162,7 +162,9 @@ h1, h2, h3, .h1, .h2, .h3 {
   margin-bottom: 0.7142857143rem; }
 
 img {
-  max-width: 100%; }
+  max-width: 100%;
+  object-fit: cover;
+ }
 
 .img-fluid {
   width: 100%; }

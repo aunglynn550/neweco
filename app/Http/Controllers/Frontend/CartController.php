@@ -161,7 +161,7 @@ class CartController extends Controller
                 $cartQty = Cart::count();
                 $cartTotal = Cart::total();
 
-                $divisions = ShipDivision::orderBy('division_name','ASC')->get();
+                $divisions = ShipDivision::orderBy('division_name_en','ASC')->get();
                 return view('frontend.checkout.checkout_view',compact('carts','cartQty','cartTotal','divisions'));
 
             }else{

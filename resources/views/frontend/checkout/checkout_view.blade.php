@@ -78,7 +78,7 @@ My Check Out
 					<div class="form-group">
 						<h5><b>Division Select </b> <span class="text-danger">*</span></h5>
 						<div class="controls">
-							<select name="division_id" class="form-control" required="" >
+							<select name="division_id" class="form-control">
 								<option value="" selected="" disabled="">Select Division</option>
 								@foreach($divisions as $item)
 								<option value="{{ $item->id }}">{{ $item->division_name }}</option>	
@@ -94,7 +94,7 @@ My Check Out
 							<div class="form-group">
 						<h5><b>District Select</b>  <span class="text-danger">*</span></h5>
 						<div class="controls">
-							<select name="district_id" class="form-control" required="" >
+							<select name="district_id" class="form-control">
 								<option value="" selected="" disabled="">Select District</option>
 
 							</select>
@@ -108,7 +108,7 @@ My Check Out
 							<div class="form-group">
 						<h5><b>State Select</b> <span class="text-danger">*</span></h5>
 						<div class="controls">
-							<select name="state_id" class="form-control" required="" >
+							<select name="state_id" class="form-control">
 								<option value="" selected="" disabled="">Select State</option>
 
 							</select>

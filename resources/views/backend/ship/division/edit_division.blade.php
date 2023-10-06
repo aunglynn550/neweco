@@ -28,15 +28,27 @@
            
                       <div class="form-group">
                      
-                            <h5>Division Name<span class="text-danger">*</span></h5>
+                            <h5>Division Name English<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input  type="text" name="division_name" class="form-control" value="{{ $division->division_name }}"> 
-                                @error('division_name')
+                                <input  type="text" name="division_name_en" class="form-control" value="{{ $division->division_name_en }}"> 
+                                @error('division_name_en')
                                 <span class="btn btn-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             
-                      </div><!--End-Form-Group-->                                                    
+                      </div><!--End-Form-Group--> 
+                      
+                      <div class="form-group">
+                     
+                            <h5>Division Name Chinese<span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <input  type="text" name="division_name_chi" class="form-control" value="{{ $division->division_name_chi }}"> 
+                                @error('division_name_chi')
+                                <span class="btn btn-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            
+                      </div><!--End-Form-Group--> 
                                                                                                                   
 
                         <div class="text-xs-right">

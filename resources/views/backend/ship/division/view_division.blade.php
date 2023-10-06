@@ -19,7 +19,8 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>						
-								<th>Division Name</th>								
+								<th>Division Name English</th>								
+								<th>Division Name Chinese</th>								
 								<th>Action</th>
 								
 							</tr>
@@ -27,13 +28,11 @@
 						<tbody>
                 @foreach($divisions as $item)
 							<tr>								
-								<td>{{ $item->division_name }}</td>
-							
-								
-								
+								<td>{{ $item->division_name_en }}</td>											
+								<td>{{ $item->division_name_chi }}</td>
 								<td width="40%">
-                  <a href="{{ route('division.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
-								  <a href="{{ route('division.delete',$item->id) }}" title="Delete Data" id="delete" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                  					<a href="{{ route('division.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
+									<a href="{{ route('division.delete',$item->id) }}" title="Delete Data" id="delete" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                                 </td>								
 							</tr>
 						    @endforeach
@@ -67,15 +66,26 @@
            
                       <div class="form-group">
                      
-                            <h5>Division Name<span class="text-danger">*</span></h5>
+                            <h5>Division Name English<span class="text-danger">*</span></h5>
                             <div class="controls">
-                                <input  type="text" name="division_name" class="form-control" > 
-                                @error('division_name')
+                                <input  type="text" name="division_name_en" class="form-control" > 
+                                @error('division_name_en')
                                 <span class="btn btn-danger">{{ $message }}</span>
                                 @enderror
                             </div>
                             
-                      </div><!--End-Form-Group-->                                                    
+                      </div><!--End-Form-Group-->
+					  <div class="form-group">
+                     
+                            <h5>Division Name Chinese<span class="text-danger">*</span></h5>
+                            <div class="controls">
+                                <input  type="text" name="division_name_chi" class="form-control" > 
+                                @error('division_name_chi')
+                                <span class="btn btn-danger">{{ $message }}</span>
+                                @enderror
+                            </div>
+                            
+                      </div><!--End-Form-Group-->                                                      
                                                                                                                   
 
                         <div class="text-xs-right">

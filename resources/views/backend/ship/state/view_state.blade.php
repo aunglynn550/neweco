@@ -28,12 +28,12 @@
 						</thead>
 						<tbody>
 
-                @foreach($states as $item)
+                            @foreach($states as $item)
 							<tr>								
 																							
-								<td>{{ $item['division']['division_name'] }}</td>															
-								<td>{{ $item->district->district_name}}</td>															
-								<td>{{ $item->state_name }}</td>															
+								<td>{{ $item['division']['division_name_en'] }}</td>															
+								<td>{{ $item->district->district_name_en}}</td>															
+								<td>{{ $item->state_name_en }}</td>															
 								
 								<td width="40%">
                                     <a href="{{ route('state.edit',$item->id) }}" title="Edit Data" class="btn btn-info"><i class="fa fa-pencil"></i></a>								
@@ -73,12 +73,12 @@
 									<select name="division_id" required="" class="form-control" aria-invalid="false">
 										<option value="" disabled="" selected="">Select Division</option>
                                         @foreach($divisions as $division)
-										<option value="{{ $division->id }}">{{ $division->division_name }}</option>
+										<option value="{{ $division->id }}">{{ $division->division_name_en }}</option>
 										@endforeach
 									</select>
                                     @error('division_id')
-                                <span class="btn btn-danger">{{ $message }}</span>
-                                @enderror
+                                        <span class="btn btn-danger">{{ $message }}</span>
+                                    @enderror
 								<div class="help-block"></div></div>
 					</div><!--End-Form-Group-->
 
@@ -152,7 +152,7 @@
                         var d=$('select[name="district_id"]').empty();
                         $.each(data, function(key,value){
                             $('select[name="district_id"]').append('<option value="'+value.id+'">'
-                            +value.district_name+'</option>');
+                            +value.district_name_en+'</option>');
 
                         });
                     }

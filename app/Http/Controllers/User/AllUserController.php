@@ -81,7 +81,7 @@ class AllUserController extends Controller
 
  
     ///////////// Order Traking ///////
-    public function OrderTraking(Request $request){
+    public function OrderTracking(Request $request){
 
         $invoice = $request->code;
 
@@ -89,7 +89,7 @@ class AllUserController extends Controller
 
         if ($track) {
          
-        return view('frontend.traking.track_order',compact('track'));
+        return view('frontend.tracking.track_order',compact('track'));
 
         }else{
 

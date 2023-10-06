@@ -19,12 +19,13 @@ class ShippingAreaController extends Controller
     
     public function DivisionStore(Request $request){
         $request->validate([
-            'division_name' => 'required',           
+            'division_name_en' => 'required',           
         ]);
 
       
         ShipDivision::insert([
-            'division_name' => strtoupper($request->division_name) ,           
+            'division_name_en' => strtoupper($request->division_name_en) ,           
+            'division_name_chi' => strtoupper($request->division_name_chi) ,           
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -45,12 +46,13 @@ class ShippingAreaController extends Controller
 
     public function DivisionUpdate(Request $request,$id){
         $request->validate([
-            'division_name' => 'required',           
+            'division_name_en' => 'required',           
         ]);
 
       
         ShipDivision::findOrFail($id)->update([
-            'division_name' => strtoupper($request->division_name) ,           
+            'division_name_en' => strtoupper($request->division_name_en) ,           
+            'division_name_chi' => strtoupper($request->division_name_chi) ,           
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -85,13 +87,14 @@ class ShippingAreaController extends Controller
     public function DistrictStore(Request $request){
         $request->validate([
             'division_id' => 'required',           
-            'district_name' => 'required',           
+            'district_name_en' => 'required',           
         ]);
 
       
         ShipDistrict::insert([
             'division_id' => $request->division_id ,           
-            'district_name' => strtoupper($request->district_name) ,           
+            'district_name_en' => strtoupper($request->district_name_en) ,           
+            'district_name_chi' => strtoupper($request->district_name_chi) ,           
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -114,13 +117,14 @@ class ShippingAreaController extends Controller
     public function DistrictUpdate(Request $request,$id){
         $request->validate([
             'division_id' => 'required',           
-            'district_name' => 'required',           
+            'district_name_en' => 'required',           
         ]);
 
       
         ShipDistrict::findOrFail($id)->update([
             'division_id' => $request->division_id ,           
-            'district_name' => strtoupper($request->district_name) ,           
+            'district_name_en' => strtoupper($request->district_name_en) ,           
+            'district_name_chi' => strtoupper($request->district_name_chi) ,           
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -161,14 +165,15 @@ class ShippingAreaController extends Controller
         $request->validate([
             'division_id' => 'required',           
             'district_id' => 'required',           
-            'state_name' => 'required',           
+            'state_name_en' => 'required',           
         ]);
 
       
         ShipState::insert([
             'division_id' => $request->division_id ,           
             'district_id' => $request->district_id ,           
-            'state_name' => strtoupper($request->state_name) ,           
+            'state_name_en' => strtoupper($request->state_name_en) ,           
+            'state_name_chi' => strtoupper($request->state_name_chi) ,           
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -193,14 +198,15 @@ class ShippingAreaController extends Controller
         $request->validate([
             'division_id' => 'required',           
             'district_id' => 'required',           
-            'state_name' => 'required',         
+            'state_name_en' => 'required',         
         ]);
 
       
         ShipState::findOrFail($id)->update([
             'division_id' => $request->division_id ,           
             'district_id' => $request->district_id ,           
-            'state_name' => strtoupper($request->state_name) ,           
+            'state_name_en' => strtoupper($request->state_name_en) ,           
+            'state_name_chi' => strtoupper($request->state_name_chi) ,           
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ]);
@@ -227,7 +233,7 @@ class ShippingAreaController extends Controller
 
 
     public function GetDistrict($division_id){
-        $districts =  ShipDistrict::where('division_id',$division_id)->orderBy('district_name','ASC')->get();
+        $districts =  ShipDistrict::where('division_id',$division_id)->orderBy('district_name_en','ASC')->get();
 
         return json_encode($districts);
 

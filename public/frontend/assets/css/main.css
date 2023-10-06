@@ -34,6 +34,7 @@ Text Domain:  Flipmart
   --font-family-primary: 'Chivo Mono', monospace;
   --font-family-secondary: 'Playfair Display', serif;
   --font-family-semi: 'Work Sans', sans-serif;
+  --clr-primary:#36483a;
 }
 .green-text {
   color: #abd07e !important;
@@ -5957,7 +5958,7 @@ z-index:10000
      position: relative
  }
  .track .step.active:before {
-     background: #FF5722
+     background: var(--clr-primary);
  }
  .track .step::before {
      height: 7px;
@@ -5968,7 +5969,7 @@ z-index:10000
      top: 18px
  }
  .track .step.active .icon {
-     background: #ee5435;
+     background: var(--clr-primary);
      color: #fff
  }
  .track .icon {
