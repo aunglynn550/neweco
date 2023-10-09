@@ -124,7 +124,7 @@
 					<div class='col-sm-6 col-md-7 product-info-block'>
 						<div class="product-info">
 							<h1 class="name" id="pname">
-                            @if(session()->get('language') == 'hindi') {{ $product->product_name_hin }}
+                            @if(session()->get('language') == 'china') {{ $product->product_name_chi }}
                             @else{{ $product->product_name_en }} 
                             @endif
                             </h1>
@@ -159,7 +159,7 @@
 
 							<div class="description-container m-t-20">
 								
-                            @if(session()->get('language') == 'hindi') {{ $product->short_descp_hin }}
+                            @if(session()->get('language') == 'china') {{ $product->short_descp_chi }}
                             @else{{ $product->short_descp_en }} 
                             @endif
 							</div><!-- /.description-container -->
@@ -208,9 +208,18 @@
 									<label class="info-title control-label">Choose Color <span></span></label>
 									<select id="color" class="form-control unicase-form-control selectpicker" style="display: none;">
 										<option selected="" disabled="">--Select Color--</option>
-										@foreach($product_color_en as $color)
-										<option value="{{ $color }}">{{ ucwords($color) }}</option>
-										@endforeach
+										@if(session()->get('language') == 'china') 
+											@foreach($product_color_chi as $color)
+											<option value="{{ $color }}">{{ ucwords($color) }}</option>
+											@endforeach
+										@else
+											@foreach($product_color_en as $color)
+											<option value="{{ $color }}">{{ ucwords($color) }}</option>
+											@endforeach
+										@endif
+
+									
+										
 									</select>
 								
 								</div><!-- /.form-group -->
@@ -226,9 +235,15 @@
 									<label class="info-title control-label">Choose Size <span>	</span></label>
 									<select id="size" class="form-control unicase-form-control selectpicker" style="display: none;">
 										<option selected="" disabled="">--Select Size--</option>
-										@foreach($product_size_en as $size)
-										<option value="{{ $size }}">{{ ucwords($size) }}</option>
-										@endforeach
+										@if(session()->get('language') == 'china') 
+											@foreach($product_size_chi as $size)
+											<option value="{{ $size }}">{{ ucwords($size) }}</option>
+											@endforeach
+										@else
+											@foreach($product_size_en as $size)
+											<option value="{{ $size }}">{{ ucwords($size) }}</option>
+											@endforeach
+										@endif
 									</select>
 								@endif 
 								</div><!-- /.form-group -->

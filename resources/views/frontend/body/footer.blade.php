@@ -94,7 +94,13 @@
     <div class="container">
       <div class="col-xs-12 col-sm-6 no-padding social">
         <ul class="link">
-        
+          <li class="fb pull-left"><a target="_blank" rel="nofollow" href="{{ $setting->facebook }}" title="Facebook"></a></li>
+          <li class="tw pull-left"><a target="_blank" rel="nofollow" href="{{ $setting->twitter }}" title="Twitter"></a></li>
+            <li class="googleplus pull-left"><a target="_blank" rel="nofollow" href="#" title="GooglePlus"></a></li>
+            <li class="rss pull-left"><a target="_blank" rel="nofollow" href="#" title="RSS"></a></li>
+            <li class="pintrest pull-left"><a target="_blank" rel="nofollow" href="#" title="PInterest"></a></li>
+            <li class="linkedin pull-left"><a target="_blank" rel="nofollow" href="{{ $setting->linkedin }}" title="Linkedin"></a></li>
+            <li class="youtube pull-left"><a target="_blank" rel="nofollow" href="{{ $setting->youtube }}" title="Youtube"></a></li>
         </ul>
       </div>
       <div class="col-xs-12 col-sm-6 no-padding">

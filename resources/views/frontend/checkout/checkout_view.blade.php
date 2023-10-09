@@ -81,7 +81,7 @@ My Check Out
 							<select name="division_id" class="form-control">
 								<option value="" selected="" disabled="">Select Division</option>
 								@foreach($divisions as $item)
-								<option value="{{ $item->id }}">{{ $item->division_name }}</option>	
+								<option value="{{ $item->id }}">{{ $item->division_name_en }}</option>	
 								@endforeach
 							</select>
 							@error('division_id') 
@@ -263,7 +263,7 @@ My Check Out
                         var d=$('select[name="district_id"]').empty();
                         $.each(data, function(key,value){
                             $('select[name="district_id"]').append('<option value="'+value.id+'">'
-                            +value.district_name+'</option>');
+                            +value.district_name_en+'</option>');
 
                         });
                     }
@@ -286,7 +286,7 @@ My Check Out
                         var d=$('select[name="state_id"]').empty();
                         $.each(data, function(key,value){
                             $('select[name="state_id"]').append('<option value="'+value.id+'">'
-                            +value.state_name+'</option>');
+                            +value.state_name_en+'</option>');
 
                         });
                     }
