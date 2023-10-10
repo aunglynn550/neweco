@@ -1,3 +1,7 @@
+@php 
+$setting = App\Models\SiteSetting::find(1);
+@endphp
+
 <footer id="footer" class="footer color-bg">
   <div class="footer-bottom">
     <div class="container">
