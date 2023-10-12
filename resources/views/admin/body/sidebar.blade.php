@@ -15,7 +15,7 @@ $route = Route::current()->getName();
 				 <a>
 				  <!-- logo for regular state and mobile devices -->
 					 <div class="d-flex align-items-center justify-content-center">					 	
-						  <img class="logo" src="{{ asset('backend/images/fav-transparent.png') }}" alt="">
+						  <img class="logo" src="{{ asset('backend/images/trophy.png') }}" alt="">
 						  <h3 class="logo-text"><b>Mr.Aung</b> Admin</h3>
 					 </div>
 				</a>
