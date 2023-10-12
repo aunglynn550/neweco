@@ -45,17 +45,17 @@
 
                         <tr>
                         <th> Division : </th>
-                        <th> {{ $order->division->division_name }} </th>
+                        <th> {{ $order->division->division_name_en?? 'none' }} </th>
                         </tr>
 
                         <tr>
                         <th> District : </th>
-                        <th> {{ $order->district->district_name }} </th>
+                        <th> {{ $order->district->district_name_en?? 'none' }} </th>
                         </tr>
 
                         <tr>
                         <th> State : </th>
-                        <th>{{ $order->state->state_name }} </th>
+                        <th>{{ $order->state->state_name_en?? 'none' }} </th>
                         </tr>
 
                         <tr>
@@ -120,15 +120,15 @@
                     <tr>
                       <th></th>
                       <th>
-                        @if($order->status == 'pending')
+                        @if($order->status == 'Pending')
                         <a href="{{ route('pending-confirm',$order->id) }}" class="btn btn-block btn-success" id="confirm">Confirm Order</a>
-                        @elseif($order->status == 'confirmed')
+                        @elseif($order->status == 'Confirmed')
                         <a href="{{ route('confirm.processing',$order->id) }}" class="btn btn-block btn-success" id="processing">Processing Order</a>
-                        @elseif($order->status == 'processing')
+                        @elseif($order->status == 'Processing')
                         <a href="{{ route('processing.picked',$order->id) }}" class="btn btn-block btn-success" id="picked">Picked Order</a>
-                        @elseif($order->status == 'picked')
+                        @elseif($order->status == 'Picked')
                         <a href="{{ route('picked.shipped',$order->id) }}" class="btn btn-block btn-success" id="shipped">Shipped Order</a>
-                        @elseif($order->status == 'shipped')
+                        @elseif($order->status == 'Shipped')
                         <a href="{{ route('shipped.delivered',$order->id) }}" class="btn btn-block btn-success" id="delivered">Deliver Order</a>
                         @endif 
                       </th>

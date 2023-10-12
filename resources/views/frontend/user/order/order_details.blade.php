@@ -29,17 +29,17 @@
 
                         <tr>
                         <th> Division : </th>
-                        <th> {{ $order->division->division_name }} </th>
+                        <th> {{ $order->division->division_name_en?? 'none' }} </th>
                         </tr>
 
                         <tr>
                         <th> District : </th>
-                        <th> {{ $order->district->district_name }} </th>
+                        <th> {{ $order->district->district_name_en?? 'none' }} </th>
                         </tr>
 
                         <tr>
                         <th> State : </th>
-                        <th>{{ $order->state->state_name }} </th>
+                        <th>{{ $order->state->state_name?? 'none' }} </th>
                         </tr>
 
                         <tr>
@@ -157,6 +157,10 @@
                   <label for=""> Price </label>
                 </td>
 
+                <td class="col-md-1">
+                  <label for=""> Download </label>
+                </td>
+
               </tr>
 
 
@@ -190,6 +194,23 @@
           <td class="col-md-2">
                   <label for=""> ${{ $item->price }}  ( $ {{ $item->price * $item->qty}} ) </label>
                 </td>
+
+
+            @php 
+            $file = App\Models\Product::where('id',$item->product_id)->first();
+            @endphp
+
+            <td class="col-md-1">
+                  @if($order->status == 'Pending')  
+                    <strong>
+                      <span class="badge badge-pill badge-success" style="background: #418DB9;"> No File</span>  </strong> 
+                  @elseif($order->status == 'confirmed')  
+
+                <a target="_blank" href="{{ asset('upload/pdf/'.$file->digital_file) }}">  
+                  <strong>
+                    <span class="badge badge-pill badge-success" style="background: #FF0000;"> Download Ready</span>  </strong> </a> 
+                    @endif
+            </td>
 
               </tr>
               @endforeach
