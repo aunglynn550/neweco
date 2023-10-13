@@ -23,15 +23,15 @@ Shop Page
 <!-- /.breadcrumb -->
 <div class="body-content outer-top-xs">
   <div class='container'>
+
+  <form action="{{ route('shop.filter') }}" method="post">
+  @csrf
     <div class='row'>
       <div class='col-md-3 sidebar'> 
 
         <!-- ===== == TOP NAVIGATION ======= ==== -->
         @include('frontend.common.vertical_menu')
-        <!-- = ==== TOP NAVIGATION : END === ===== -->
-
-
-
+        <!-- = ==== TOP NAVIGATION : END === ===== --> 
 
         <div class="sidebar-module-container">
           <div class="sidebar-filter"> 
@@ -44,43 +44,32 @@ Shop Page
               <div class="sidebar-widget-body">
                 <div class="accordion">
 
+                @if(!empty($_GET['category']))
+                  @php
+                  $filterCat = explode(',',$_GET['category']);
+                  @endphp
 
- @foreach($categories as $category)
-	<div class="accordion-group">
-	<div class="accordion-heading"> <a href="#collapse{{ $category->id }}" data-toggle="collapse" class="accordion-toggle collapsed"> 
-		@if(session()->get('language') == 'hindi') {{ $category->category_name_hin }} @else {{ $category->category_name_en }} @endif </a> </div>
-	<!-- /.accordion-heading -->
-	<div class="accordion-body collapse" id="collapse{{ $category->id }}" style="height: 0px;">
-	  <div class="accordion-inner">
-
- @php
-  $subcategories = App\Models\SubCategory::where('category_id',$category->id)->orderBy('subcategory_name_en','ASC')->get();
-  @endphp 
-
-   @foreach($subcategories as $subcategory)
-	    <ul>
-	      <li><a href="{{ url('subcategory/product/'.$subcategory->id.'/'.$subcategory->subcategory_slug_en ) }}">
-	      	@if(session()->get('language') == 'hindi') {{ $subcategory->subcategory_name_hin }} @else {{ $subcategory->subcategory_name_en }} @endif</a></li>
-
-	    </ul>
-	@endforeach 
+                @endif
 
 
-	  </div>
-	  <!-- /.accordion-inner --> 
-	</div>
-	<!-- /.accordion-body --> 
-	</div>
-	<!-- /.accordion-group -->
-    @endforeach              
+                  @foreach($categories as $category)
+                    <div class="accordion-group">
+                    <div class="accordion-heading"> 
+
+                    <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="category[]" value="{{ $category->category_slug_en }}" @if(!empty($filterCat) && in_array($category->category_slug_en,$filterCat)) checked @endif onchange="this.form.submit()">
+
+                      @if(session()->get('language') == 'china') {{ $category->category_name_chi }} @else {{ $category->category_name_en }} @endif 
+
+                    </label>
 
 
-
-
-
-
-
-
+                    </div>
+                    <!-- /.accordion-heading -->
+	
+                  </div>
+                  <!-- /.accordion-group -->
+                    @endforeach              
 
 
 
@@ -88,7 +77,54 @@ Shop Page
                 <!-- /.accordion --> 
               </div>
               <!-- /.sidebar-widget-body --> 
+         
+            <!-- /.sidebar-widget --> 
+
+
+<!--  /////////// This is for Brand Filder /////////////// -->
+
+
+
+ <div class="widget-header">
+                <h4 class="widget-title">Brand Filter</h4>
+              </div>
+              <div class="sidebar-widget-body">
+                <div class="accordion">
+
+                  @if(!empty($_GET['brand']))
+                  @php
+                  $filterBrand = explode(',',$_GET['brand']);
+                  @endphp
+                  @endif
+
+
+
+          @foreach($brands as $brand)
+            <div class="accordion-group">
+            <div class="accordion-heading">   
+
+          <label class="form-check-label">
+            <input type="checkbox" class="form-check-input" name="brand[]" value="{{ $brand->brand_slug_en }}" @if(!empty($filterBrand) && in_array($brand->brand_slug_en,$filterBrand)) checked @endif onchange="this.form.submit()">
+
+            @if(session()->get('language') == 'china') {{ $brand->brand_name_chi }} @else {{ $brand->brand_name_en }} @endif 
+
+          </label>
+
+
             </div>
+            <!-- /.accordion-heading -->
+
+
+            </div>
+            <!-- /.accordion-group -->
+              @endforeach              
+
+
+              </div>
+                <!-- /.accordion --> 
+              </div>
+              <!-- /.sidebar-widget-body --> 
+              </div>
             <!-- /.sidebar-widget --> 
             <!-- ============================================== SIDEBAR CATEGORY : END ============================================== --> 
 
@@ -314,7 +350,7 @@ Shop Page
 
         <div class="product-info text-left">
           <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
-          	@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
+          	@if(session()->get('language') == 'china') {{ $product->product_name_chi }} @else {{ $product->product_name_en }} @endif</a></h3>
           <div class="rating rateit-small"></div>
           <div class="description"></div>
 
@@ -404,7 +440,7 @@ Shop Page
         <div class="col col-sm-8 col-lg-8">
           <div class="product-info">
             <h3 class="name"><a href="{{ url('product/details/'.$product->id.'/'.$product->product_slug_en ) }}">
-            	@if(session()->get('language') == 'hindi') {{ $product->product_name_hin }} @else {{ $product->product_name_en }} @endif</a></h3>
+            	@if(session()->get('language') == 'china') {{ $product->product_name_chi }} @else {{ $product->product_name_en }} @endif</a></h3>
             <div class="rating rateit-small"></div>
 
 
@@ -416,7 +452,7 @@ Shop Page
 
             <!-- /.product-price -->
             <div class="description m-t-10">
-            	@if(session()->get('language') == 'hindi') {{ $product->short_descp_hin }} @else {{ $product->short_descp_en }} @endif</div>
+            	@if(session()->get('language') == 'china') {{ $product->short_descp_chi }} @else {{ $product->short_descp_en }} @endif</div>
             <div class="cart clearfix animate-effect">
               <div class="action">
                 <ul class="list-unstyled">
@@ -484,7 +520,7 @@ Shop Page
           
 
 
-          {{ $products->links('vendor.pagination.custom')  }}
+          {{ $products->appends($_GET)->links('vendor.pagination.custom')  }}
 
 
         </div>
@@ -534,7 +570,9 @@ Shop Page
 
     </div>
     <!-- /.logo-slider --> 
-    <!-- ============================================== BRANDS CAROUSEL : END ============================================== --> </div>
+    <!-- ============================================== BRANDS CAROUSEL : END ============================================== --> 
+  </form>
+  </div>
   <!-- /.container --> 
 
 </div>
